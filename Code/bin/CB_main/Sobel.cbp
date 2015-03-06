@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="Sobel" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sobel">
+         <Option output="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/sobel.exe" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="C:/Users/Sylvain/workspace/SiftPreesm/Code/include" />
+            <Add directory="C:/Users/Sylvain/workspace/SiftPreesm/Code/lib/SDL-1.2.15/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include-fixed" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/backward" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 sobel" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sobel/fast">
+         <Option output="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/sobel.exe" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="C:/Users/Sylvain/workspace/SiftPreesm/Code/include" />
+            <Add directory="C:/Users/Sylvain/workspace/SiftPreesm/Code/lib/SDL-1.2.15/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include-fixed" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/backward" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 sobel/fast" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/CB_main/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/generated/Core0.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/DoG.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/buildOB.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/buildSS.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/clock.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/communication.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/dump.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/extreme.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/fifo.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/img_io.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/keypoint.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/main.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/memory.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/ori.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/render.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/sift.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/sobel.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/splitMerge.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/yuvDisplay.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/src/yuvRead.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/clock.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/communication.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/dump.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/fifo.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/img_io.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/memory.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/pthread.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/sched.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/semaphore.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/sift.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/sobel.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/splitMerge.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/x86.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/yuvDisplay.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/include/yuvRead.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

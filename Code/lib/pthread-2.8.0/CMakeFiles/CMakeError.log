@@ -1,0 +1,22 @@
+Determining if files pthread.h exist failed with the following output:
+Change Dir: C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe" "cmTryCompileExec4372582/fast"
+C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTryCompileExec4372582.dir\build.make CMakeFiles/cmTryCompileExec4372582.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/CMakeFiles/CMakeTmp'
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E cmake_progress_report "C:\Users\Sylvain\workspace\projets github\Preesm_Sift\Code\lib\pthread-2.8.0\CMakeFiles\CMakeTmp\CMakeFiles" 1
+Building C object CMakeFiles/cmTryCompileExec4372582.dir/CheckIncludeFiles.c.obj
+C:\PROGRA~2\CODEBL~1\MinGW\bin\gcc.exe   -std=c99 -DX4_CORES    -o CMakeFiles\cmTryCompileExec4372582.dir\CheckIncludeFiles.c.obj   -c "C:\Users\Sylvain\workspace\projets github\Preesm_Sift\Code\lib\pthread-2.8.0\CMakeFiles\CMakeTmp\CheckIncludeFiles.c"
+C:\Users\Sylvain\workspace\projets github\Preesm_Sift\Code\lib\pthread-2.8.0\CMakeFiles\CMakeTmp\CheckIncludeFiles.c:2:21: fatal error: pthread.h: No such file or directory
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles/cmTryCompileExec4372582.dir/CheckIncludeFiles.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory `C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [cmTryCompileExec4372582/fast] Error 2
+
+Source:
+/* */
+#include <pthread.h>
+
+
+int main(){return 0;}
+

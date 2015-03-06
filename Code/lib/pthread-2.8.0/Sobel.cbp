@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="Sobel" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\cmake_modules\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sobel">
+         <Option output="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/sobel.exe" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include" />
+            <Add directory="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/SDL-1.2.15/include" />
+            <Add directory="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include-fixed" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/backward" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 sobel" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sobel/fast">
+         <Option output="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/sobel.exe" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include" />
+            <Add directory="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/SDL-1.2.15/include" />
+            <Add directory="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include-fixed" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/backward" />
+            <Add directory="c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 sobel/fast" />
+            <CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/pthread-2.8.0/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/generated/Core0.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/DoG.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/buildOB.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/buildSS.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/clock.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/communication.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/dump.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/extreme.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/fifo.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/img_io.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/keypoint.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/main.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/memory.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/ori.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/render.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/sift.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/sobel.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/splitMerge.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/yuv2RGB.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/yuvDisplay.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/src/yuvRead.c">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/clock.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/communication.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/dump.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/fifo.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/img_io.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/memory.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/sift.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/sobel.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/splitMerge.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/x86.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/yuvDisplay.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/include/yuvRead.h">
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="C:/Users/Sylvain/workspace/projets github/Preesm_Sift/Code/lib/cmake_modules/FindThreads.cmake">
+          <Option virtualFolder="CMake Files\lib\cmake_modules\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

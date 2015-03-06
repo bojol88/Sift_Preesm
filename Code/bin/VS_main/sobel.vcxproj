@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{BC5B0312-B2BB-42B7-B978-7B940D0AF4A3}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>sobel</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sobel.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sobel</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sobel.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sobel</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">sobel.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">sobel</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">sobel.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">sobel</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c99 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>X1_CORES;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>X1_CORES;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c99 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Release/sobel.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Release/sobel.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c99 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/MinSizeRel/sobel.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/MinSizeRel/sobel.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c99 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/RelWithDebInfo/sobel.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/RelWithDebInfo/sobel.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Sylvain/workspace/SiftPreesm/Code -BC:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main --check-stamp-file C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindSDL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Sylvain/workspace/SiftPreesm/Code -BC:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main --check-stamp-file C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindSDL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Sylvain/workspace/SiftPreesm/Code -BC:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main --check-stamp-file C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindSDL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Sylvain/workspace/SiftPreesm/Code -BC:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main --check-stamp-file C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/Sylvain/workspace/SiftPreesm/Code/CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindSDL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindThreads.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Users\Sylvain\workspace\SiftPreesm\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\clock.h" />
+    <ClInclude Include="..\..\include\communication.h" />
+    <ClInclude Include="..\..\include\dump.h" />
+    <ClInclude Include="..\..\include\fifo.h" />
+    <ClInclude Include="..\..\include\img_io.h" />
+    <ClInclude Include="..\..\include\memory.h" />
+    <ClInclude Include="..\..\include\sift.h" />
+    <ClInclude Include="..\..\include\sobel.h" />
+    <ClInclude Include="..\..\include\splitMerge.h" />
+    <ClInclude Include="..\..\include\x86.h" />
+    <ClInclude Include="..\..\include\yuvDisplay.h" />
+    <ClInclude Include="..\..\include\yuvRead.h" />
+    <ClCompile Include="..\..\src\buildOB.c" />
+    <ClCompile Include="..\..\src\buildSS.c" />
+    <ClCompile Include="..\..\src\clock.c" />
+    <ClCompile Include="..\..\src\communication.c" />
+    <ClCompile Include="..\..\src\DoG.c" />
+    <ClCompile Include="..\..\src\dump.c" />
+    <ClCompile Include="..\..\src\extreme.c" />
+    <ClCompile Include="..\..\src\fifo.c" />
+    <ClCompile Include="..\..\src\img_io.c" />
+    <ClCompile Include="..\..\src\keypoint.c" />
+    <ClCompile Include="..\..\src\main.c" />
+    <ClCompile Include="..\..\src\memory.c" />
+    <ClCompile Include="..\..\src\ori.c" />
+    <ClCompile Include="..\..\src\render.c" />
+    <ClCompile Include="..\..\src\sift.c" />
+    <ClCompile Include="..\..\src\yuvDisplay.c" />
+    <ClCompile Include="..\..\src\yuvRead.c" />
+    <ClCompile Include="..\..\generated\Core0.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/ZERO_CHECK.vcxproj">
+      <Project>14AABE39-567D-40C3-9F47-99EA158DC55A</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="kind" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <key attr.name="name" attr.type="string" for="node"/>
+    <key attr.name="kind" attr.type="string" for="node"/>
+    <key attr.name="nbRepeat" attr.type="int" for="node"/>
+    <key attr.name="edge_cons" attr.type="string" for="edge"/>
+    <key attr.name="edge_delay" attr.type="string" for="edge"/>
+    <key attr.name="edge_prod" attr.type="string" for="edge"/>
+    <key attr.name="data_type" attr.type="string" for="edge"/>
+    <key attr.name="source_port_modifier" attr.type="string" for="edge"/>
+    <key attr.name="target_port_modifier" attr.type="string" for="edge"/>
+    <graph edgedefault="directed" kind="sdf">
+        <data key="name">top_display</data>
+        <data key="kind">sdf</data>
+        <data key="variables">
+            <variable name="index" value="0"/>
+            <variable name="ysize" value="288"/>
+            <variable name="xsize" value="352"/>
+        </data>
+        <node id="Read_YUV">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@33badc3e</data>
+            <data key="name">Read_YUV</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="ysize" value="288"/>
+                <argument name="xsize" value="352"/>
+            </data>
+        </node>
+        <node id="display">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@30d184fa</data>
+            <data key="name">display</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="id" value="0"/>
+                <argument name="ysize" value="288"/>
+                <argument name="xsize" value="352"/>
+            </data>
+        </node>
+        <node id="Sift">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@b715220</data>
+            <data key="name">Sift</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="ysize" value="288"/>
+                <argument name="xsize" value="352"/>
+            </data>
+        </node>
+        <edge source="Read_YUV" sourceport="u" target="display" targetport="u">
+            <data key="edge_cons">25344</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">25344</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+        </edge>
+        <edge source="Read_YUV" sourceport="v" target="display" targetport="v">
+            <data key="edge_cons">25344</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">25344</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+        </edge>
+        <edge source="Read_YUV" sourceport="y" target="Sift" targetport="input">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+        </edge>
+        <edge source="Sift" sourceport="output" target="display" targetport="y">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+        </edge>
+    </graph>
+</graphml>

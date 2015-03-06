@@ -1,0 +1,3 @@
+C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/CMakeFiles/ALL_BUILD.dir
+C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/CMakeFiles/sobel.dir
