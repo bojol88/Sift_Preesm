@@ -1,7 +1,11 @@
-﻿La génération a démarré 06/03/2015 13:45:51.
+﻿La génération a démarré 06/03/2015 16:18:31.
      1>Projet "C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\sobel.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\sobel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib" "..\..\lib\SDL-1.2.15\lib\x86\SDL.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug sobel.dir\Debug\buildOB.obj
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\pthread-2.8.0\include" /IC:\Users\Sylvain\workspace\SiftPreesm\Code\include /I"C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include" /Zi /nologo /W1 /WX- /Od /Ob0 /Oy- /D X1_CORES /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"sobel.dir\Debug\\" /Fd"sobel.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt  -std=c99 ..\..\src\main.c
+     1>cl : Ligne de commande warning D9002: option '-std=c99' inconnue ignorée
+         main.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\sobel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib" "..\..\lib\SDL-1.2.15\lib\x86\SDL.lib" "..\..\lib\pthread-2.8.0\lib\pthreadVCE2.lib" "..\..\lib\pthread-2.8.0\lib\pthreadVC2.lib" "..\..\lib\pthread-2.8.0\lib\pthreadVSE2.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug sobel.dir\Debug\buildOB.obj
          sobel.dir\Debug\buildSS.obj
          sobel.dir\Debug\clock.obj
          sobel.dir\Debug\communication.obj
@@ -19,18 +23,9 @@
          sobel.dir\Debug\yuvDisplay.obj
          sobel.dir\Debug\yuvRead.obj
          sobel.dir\Debug\Core0.obj
-     1>communication.obj : error LNK2019: symbole externe non résolu __imp__sem_wait référencé dans la fonction _receiveEnd
-     1>memory.obj : error LNK2001: symbole externe non résolu __imp__sem_wait
-     1>communication.obj : error LNK2019: symbole externe non résolu __imp__sem_post référencé dans la fonction _sendStart
-     1>memory.obj : error LNK2001: symbole externe non résolu __imp__sem_post
-     1>memory.obj : error LNK2019: symbole externe non résolu __imp__sem_init référencé dans la fonction _merged_malloc
-     1>memory.obj : error LNK2019: symbole externe non résolu __imp__sem_destroy référencé dans la fonction _merged_free
-     1>memory.obj : error LNK2019: symbole externe non résolu __imp__sem_trywait référencé dans la fonction _merged_free
-     1>Core0.obj : error LNK2019: symbole externe non résolu __imp__pthread_exit référencé dans la fonction _computationThread_Core0
-     1>Core0.obj : error LNK2019: symbole externe non résolu __imp__pthread_barrier_wait référencé dans la fonction _computationThread_Core0
-     1>C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\sobel.exe : fatal error LNK1120: 7 externes non résolus
-     1>Génération du projet "C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\sobel.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
+         sobel.vcxproj -> C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\sobel.exe
+     1>Génération du projet "C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\sobel.vcxproj" terminée (Build cible(s)).
 
-ÉCHEC de la build.
+La génération a réussi.
 
-Temps écoulé 00:00:00.16
+Temps écoulé 00:00:01.30

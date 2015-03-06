@@ -86,7 +86,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalOptions> -std=c99 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\pthread-2.8.0\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
@@ -114,7 +114,7 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib;..\..\lib\pthread-2.8.0\lib\pthreadVCE2.lib;..\..\lib\pthread-2.8.0\lib\pthreadVC2.lib;..\..\lib\pthread-2.8.0\lib\pthreadVSE2.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.lib</ImportLibrary>
