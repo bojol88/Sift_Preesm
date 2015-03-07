@@ -11,13 +11,11 @@
         <node expr="288" id="ysize" kind="param"/>
         <node expr="0" id="index" kind="param"/>
         <node id="Read_YUV" kind="actor">
-            <data key="graph_desc">org.ietr.preesm.tutorials.tutorial2.sobel/Code/include/yuvRead.h</data>
+            <data key="graph_desc">SiftPreesm/Code/include/yuvRead.h</data>
             <loop name="readYUV">
                 <param direction="IN" isConfig="true" name="xsize" type="int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
                 <param direction="OUT" isConfig="false" name="y" type=" unsigned char *"/>
-                <param direction="OUT" isConfig="false" name="u" type=" nsigned char *"/>
-                <param direction="OUT" isConfig="false" name="v" type=" unsigned char *"/>
             </loop>
             <init name="initReadYUV">
                 <param direction="IN" isConfig="true" name="xsize" type="int "/>
@@ -26,50 +24,52 @@
             <port kind="cfg_input" name="ysize"/>
             <port kind="cfg_input" name="xsize"/>
             <port annotation="NONE" expr="xsize*ysize" kind="output" name="y"/>
-            <port annotation="NONE" expr="xsize/2*ysize/2" kind="output" name="u"/>
-            <port annotation="NONE" expr="xsize/2*ysize/2" kind="output" name="v"/>
         </node>
         <node id="display" kind="actor">
-            <data key="graph_desc">org.ietr.preesm.tutorials.tutorial2.sobel/Code/include/yuvDisplay.h</data>
-            <loop name="yuvDisplay">
+            <data key="graph_desc">SiftPreesm/Code/include/displayRGB.h</data>
+            <loop name="display3Components">
                 <param direction="IN" isConfig="true" name="id" type="int "/>
-                <param direction="IN" isConfig="false" name="y" type=" unsigned char *"/>
-                <param direction="IN" isConfig="false" name="u" type=" nsigned char *"/>
-                <param direction="IN" isConfig="false" name="v" type=" unsigned char *"/>
+                <param direction="IN" isConfig="false" name="r" type=" unsigned cha *"/>
+                <param direction="IN" isConfig="false" name="g" type=" unsined char *"/>
+                <param direction="IN" isConfig="false" name="b" type=" unsigned char *"/>
             </loop>
-            <init name="yuvDisplayInit">
+            <init name="displayRGBInit">
                 <param direction="IN" isConfig="true" name="id" type="int "/>
-                <param direction="IN" isConfig="true" name="xsize" type=" int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="IN" isConfig="true" name="xsize" type=" int "/>
             </init>
             <port kind="cfg_input" name="id"/>
             <port kind="cfg_input" name="xsize"/>
             <port kind="cfg_input" name="ysize"/>
-            <port annotation="NONE" expr="xsize*ysize" kind="input" name="y"/>
-            <port annotation="NONE" expr="xsize/2*ysize/2" kind="input" name="u"/>
-            <port annotation="NONE" expr="xsize/2*ysize/2" kind="input" name="v"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="input" name="r"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="input" name="g"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="input" name="b"/>
         </node>
         <node id="Sift" kind="actor">
-            <data key="graph_desc">org.ietr.preesm.tutorials.tutorial2.sobel/Code/include/sift.h</data>
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
             <loop name="AppelSift">
                 <param direction="IN" isConfig="false" name="input" type="unsigned char* "/>
                 <param direction="IN" isConfig="true" name="xsize" type=" int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
-                <param direction="OUT" isConfig="false" name="output" type=" unsigned char* "/>
+                <param direction="OUT" isConfig="false" name="r" type=" unsigned cha* "/>
+                <param direction="OUT" isConfig="false" name="g" type=" unsined char* "/>
+                <param direction="OUT" isConfig="false" name="b" type=" unsigned char* "/>
             </loop>
             <port kind="cfg_input" name="xsize"/>
             <port kind="cfg_input" name="ysize"/>
             <port annotation="NONE" expr="xsize*ysize" kind="input" name="input"/>
-            <port annotation="NONE" expr="xsize*ysize" kind="output" name="output"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="r"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="g"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="b"/>
         </node>
-        <edge kind="fifo" source="Read_YUV" sourceport="u"
-            target="display" targetport="u" type="uchar"/>
-        <edge kind="fifo" source="Read_YUV" sourceport="v"
-            target="display" targetport="v" type="uchar"/>
         <edge kind="fifo" source="Read_YUV" sourceport="y" target="Sift"
             targetport="input" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="output"
-            target="display" targetport="y" type="uchar"/>
+        <edge kind="fifo" source="Sift" sourceport="r" target="display"
+            targetport="r" type="uchar"/>
+        <edge kind="fifo" source="Sift" sourceport="g" target="display"
+            targetport="g" type="uchar"/>
+        <edge kind="fifo" source="Sift" sourceport="b" target="display"
+            targetport="b" type="uchar"/>
         <edge kind="dependency" source="xsize" target="Read_YUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="Read_YUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="display" targetport="xsize"/>

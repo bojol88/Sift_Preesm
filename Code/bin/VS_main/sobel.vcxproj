@@ -97,11 +97,11 @@
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PreprocessorDefinitions>X1_CORES;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>X1_CORES;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -114,7 +114,7 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib;..\..\lib\pthread-2.8.0\lib\pthreadVCE2.lib;..\..\lib\pthread-2.8.0\lib\pthreadVC2.lib;..\..\lib\pthread-2.8.0\lib\pthreadVSE2.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib;..\..\lib\SDL-1.2.15\lib\x86\SDL.lib;..\..\lib\pthread-2.8.0\lib\pthreadVC2.lib;..\..\lib\pthread-2.8.0\lib\pthreadVCE2.lib;..\..\lib\pthread-2.8.0\lib\pthreadVSE2.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.lib</ImportLibrary>
@@ -141,11 +141,11 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -185,11 +185,11 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -228,11 +228,11 @@
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>X1_CORES;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X1_CORE;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\Sylvain\workspace\SiftPreesm\Code\include;C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -317,6 +317,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="..\..\include\clock.h" />
     <ClInclude Include="..\..\include\communication.h" />
+    <ClInclude Include="..\..\include\displayRGB.h" />
     <ClInclude Include="..\..\include\dump.h" />
     <ClInclude Include="..\..\include\fifo.h" />
     <ClInclude Include="..\..\include\img_io.h" />
@@ -325,12 +326,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="..\..\include\sobel.h" />
     <ClInclude Include="..\..\include\splitMerge.h" />
     <ClInclude Include="..\..\include\x86.h" />
-    <ClInclude Include="..\..\include\yuvDisplay.h" />
     <ClInclude Include="..\..\include\yuvRead.h" />
     <ClCompile Include="..\..\src\buildOB.c" />
     <ClCompile Include="..\..\src\buildSS.c" />
     <ClCompile Include="..\..\src\clock.c" />
     <ClCompile Include="..\..\src\communication.c" />
+    <ClCompile Include="..\..\src\displayRGB.c" />
     <ClCompile Include="..\..\src\DoG.c" />
     <ClCompile Include="..\..\src\dump.c" />
     <ClCompile Include="..\..\src\extreme.c" />
@@ -342,7 +343,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\..\src\ori.c" />
     <ClCompile Include="..\..\src\render.c" />
     <ClCompile Include="..\..\src\sift.c" />
-    <ClCompile Include="..\..\src\yuvDisplay.c" />
+    <ClCompile Include="..\..\src\sobel.c" />
+    <ClCompile Include="..\..\src\splitMerge.c" />
     <ClCompile Include="..\..\src\yuvRead.c" />
     <ClCompile Include="..\..\generated\Core0.c" />
   </ItemGroup>

@@ -117,7 +117,7 @@ void  render(unsigned char* img, char* out_filename,
 			 float sigmas[MAX_O][MAX_S], unsigned char* r, unsigned char* g, unsigned char* b);
 
 
-void AppelSift(unsigned char* input, int xsize, int ysize, unsigned char* output);
+void AppelSift(unsigned char* input, int xsize, int ysize, unsigned char* r, unsigned char* g, unsigned char* b);
 
 #endif//_SIFT_H_
 

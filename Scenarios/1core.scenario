@@ -23,6 +23,7 @@
         <mainComNode>shared_mem</mainComNode>
         <averageDataSize>1000</averageDataSize>
         <dataTypes>
+            <dataType name="char" size="1"/>
             <dataType name="uchar" size="1"/>
         </dataTypes>
         <specialVertexOperators>
