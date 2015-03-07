@@ -15,17 +15,15 @@
     <key attr.name="data_type" attr.type="string" for="edge"/>
     <key attr.name="source_port_modifier" attr.type="string" for="edge"/>
     <key attr.name="target_port_modifier" attr.type="string" for="edge"/>
-    <key attr.name="Weight" attr.type="string" for="edge"/>
     <graph edgedefault="directed" kind="sdf">
         <data key="name">top_display</data>
         <data key="kind">sdf</data>
         <data key="variables">
-            <variable name="index" value="0"/>
             <variable name="ysize" value="288"/>
             <variable name="xsize" value="352"/>
         </data>
         <node id="Read_YUV">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@12a76b3d</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@74670964</data>
             <data key="name">Read_YUV</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -34,19 +32,18 @@
                 <argument name="xsize" value="352"/>
             </data>
         </node>
-        <node id="display">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@2d717b5c</data>
-            <data key="name">display</data>
+        <node id="Writeppm">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1899bff0</data>
+            <data key="name">Writeppm</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
             <data key="arguments">
-                <argument name="id" value="0"/>
                 <argument name="ysize" value="288"/>
                 <argument name="xsize" value="352"/>
             </data>
         </node>
         <node id="Sift">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@7559ec52</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1608322e</data>
             <data key="name">Sift</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -62,34 +59,30 @@
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
-            <data key="Weight"/>
         </edge>
-        <edge source="Sift" sourceport="r" target="display" targetport="r">
+        <edge source="Sift" sourceport="r" target="Writeppm" targetport="r">
             <data key="edge_cons">101376</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
-            <data key="Weight"/>
         </edge>
-        <edge source="Sift" sourceport="g" target="display" targetport="g">
+        <edge source="Sift" sourceport="g" target="Writeppm" targetport="g">
             <data key="edge_cons">101376</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
-            <data key="Weight"/>
         </edge>
-        <edge source="Sift" sourceport="b" target="display" targetport="b">
+        <edge source="Sift" sourceport="b" target="Writeppm" targetport="b">
             <data key="edge_cons">101376</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
-            <data key="Weight"/>
         </edge>
     </graph>
 </graphml>

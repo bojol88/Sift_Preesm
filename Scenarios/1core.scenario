@@ -8,9 +8,9 @@
     <constraints excelUrl="">
         <constraintGroup>
             <operator name="Core0"/>
+            <task name="top_display/Writeppm"/>
             <task name="top_display/Read_YUV"/>
             <task name="top_display"/>
-            <task name="top_display/display"/>
             <task name="top_display/Sift"/>
         </constraintGroup>
     </constraints>

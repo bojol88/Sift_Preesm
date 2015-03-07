@@ -9,7 +9,6 @@
         <data key="name">top_display</data>
         <node expr="352" id="xsize" kind="param"/>
         <node expr="288" id="ysize" kind="param"/>
-        <node expr="0" id="index" kind="param"/>
         <node id="Read_YUV" kind="actor">
             <data key="graph_desc">SiftPreesm/Code/include/yuvRead.h</data>
             <loop name="readYUV">
@@ -25,20 +24,15 @@
             <port kind="cfg_input" name="xsize"/>
             <port annotation="NONE" expr="xsize*ysize" kind="output" name="y"/>
         </node>
-        <node id="display" kind="actor">
-            <data key="graph_desc">SiftPreesm/Code/include/displayRGB.h</data>
-            <loop name="display3Components">
-                <param direction="IN" isConfig="true" name="id" type="int "/>
-                <param direction="IN" isConfig="false" name="r" type=" unsigned cha *"/>
-                <param direction="IN" isConfig="false" name="g" type=" unsined char *"/>
-                <param direction="IN" isConfig="false" name="b" type=" unsigned char *"/>
-            </loop>
-            <init name="displayRGBInit">
-                <param direction="IN" isConfig="true" name="id" type="int "/>
+        <node id="Writeppm" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/img_io.h</data>
+            <loop name="write_ppm">
+                <param direction="IN" isConfig="false" name="r" type="unsigned cha* "/>
+                <param direction="IN" isConfig="false" name="g" type=" unsined char* "/>
+                <param direction="IN" isConfig="false" name="b" type=" unsigned char* "/>
+                <param direction="IN" isConfig="true" name="xsize" type="&#xa;               int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
-                <param direction="IN" isConfig="true" name="xsize" type=" int "/>
-            </init>
-            <port kind="cfg_input" name="id"/>
+            </loop>
             <port kind="cfg_input" name="xsize"/>
             <port kind="cfg_input" name="ysize"/>
             <port annotation="NONE" expr="xsize*ysize" kind="input" name="r"/>
@@ -64,17 +58,16 @@
         </node>
         <edge kind="fifo" source="Read_YUV" sourceport="y" target="Sift"
             targetport="input" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="r" target="display"
+        <edge kind="fifo" source="Sift" sourceport="r" target="Writeppm"
             targetport="r" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="g" target="display"
+        <edge kind="fifo" source="Sift" sourceport="g" target="Writeppm"
             targetport="g" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="b" target="display"
+        <edge kind="fifo" source="Sift" sourceport="b" target="Writeppm"
             targetport="b" type="uchar"/>
         <edge kind="dependency" source="xsize" target="Read_YUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="Read_YUV" targetport="ysize"/>
-        <edge kind="dependency" source="xsize" target="display" targetport="xsize"/>
-        <edge kind="dependency" source="ysize" target="display" targetport="ysize"/>
-        <edge kind="dependency" source="index" target="display" targetport="id"/>
+        <edge kind="dependency" source="xsize" target="Writeppm" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Writeppm" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Sift" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="Sift" targetport="ysize"/>
     </graph>
