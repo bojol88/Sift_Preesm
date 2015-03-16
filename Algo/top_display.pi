@@ -15,6 +15,9 @@
                 <param direction="IN" isConfig="true" name="xsize" type="int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
                 <param direction="OUT" isConfig="false" name="y" type=" unsigned char *"/>
+                <param direction="OUT" isConfig="false" name="yCP" type=" unsigned char *"/>
+                <param direction="OUT" isConfig="false" name="u" type=" nsigned char *"/>
+                <param direction="OUT" isConfig="false" name="v" type=" unsigned char *"/>
             </loop>
             <init name="initReadYUV">
                 <param direction="IN" isConfig="true" name="xsize" type="int "/>
@@ -23,6 +26,9 @@
             <port kind="cfg_input" name="ysize"/>
             <port kind="cfg_input" name="xsize"/>
             <port annotation="NONE" expr="xsize*ysize" kind="output" name="y"/>
+            <port annotation="NONE" expr="0" kind="output" name="yCP"/>
+            <port annotation="NONE" expr="0" kind="output" name="u"/>
+            <port annotation="NONE" expr="0" kind="output" name="v"/>
         </node>
         <node id="Writeppm" kind="actor">
             <data key="graph_desc">SiftPreesm/Code/include/img_io.h</data>
@@ -38,37 +44,251 @@
             <port annotation="NONE" expr="xsize*ysize" kind="input" name="r"/>
             <port annotation="NONE" expr="xsize*ysize" kind="input" name="g"/>
             <port annotation="NONE" expr="xsize*ysize" kind="input" name="b"/>
+            <port annotation="NONE" expr="0" kind="input" name="input"/>
         </node>
-        <node id="Sift" kind="actor">
+        <node id="BuildOB" kind="actor">
             <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
-            <loop name="AppelSift">
-                <param direction="IN" isConfig="false" name="input" type="unsigned char* "/>
-                <param direction="IN" isConfig="true" name="xsize" type=" int "/>
+            <loop name="buildOB">
+                <param direction="IN" isConfig="false" name="img" type="unsigned char* "/>
+                <param direction="OUT" isConfig="false" name="octaves" type="&#xd;&#xa;             unsigned char* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+            </loop>
+            <port annotation="NONE" expr="0" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="0" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="0" kind="input" name="img"/>
+            <port annotation="NONE" expr="0" kind="output" name="octaves"/>
+        </node>
+        <node id="BuildSS" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="buildSS">
+                <param direction="IN" isConfig="false" name="octaves" type="unsigned char* "/>
+                <param direction="OUT" isConfig="false"
+                    name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9;&#x9; float* "/>
+                <param direction="OUT" isConfig="false"
+                    name="scaleSpaceCP" type="&#xd;&#xa;&#x9;&#x9;&#x9; float* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+                <param direction="IN" isConfig="false" name="sigmas" type="&#xd;&#xa;             float* "/>
+            </loop>
+            <port annotation="NONE" expr="0" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="0" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="0" kind="input" name="sigmas"/>
+            <port annotation="NONE" expr="0" kind="input" name="octaves"/>
+            <port annotation="NONE" expr="0" kind="output" name="scaleSpace"/>
+            <port annotation="NONE" expr="0" kind="output" name="scaleSpaceCP"/>
+        </node>
+        <node id="DoG" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="DoG">
+                <param direction="OUT" isConfig="false" name="dog" type="float* "/>
+                <param direction="IN" isConfig="false" name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9; float* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;         int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+            </loop>
+            <port annotation="NONE" expr="0" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="0" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="0" kind="input" name="scaleSpace"/>
+            <port annotation="NONE" expr="0" kind="output" name="dog"/>
+        </node>
+        <node id="Init1" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="InitSift">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
-                <param direction="OUT" isConfig="false" name="r" type=" unsigned cha* "/>
-                <param direction="OUT" isConfig="false" name="g" type=" unsined char* "/>
-                <param direction="OUT" isConfig="false" name="b" type=" unsigned char* "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesW_g" type=" int * "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesH_g" type=" int * "/>
+                <param direction="OUT" isConfig="false" name="sigmas" type=" float * "/>
             </loop>
             <port kind="cfg_input" name="xsize"/>
             <port kind="cfg_input" name="ysize"/>
-            <port annotation="NONE" expr="xsize*ysize" kind="input" name="input"/>
-            <port annotation="NONE" expr="xsize*ysize" kind="output" name="r"/>
-            <port annotation="NONE" expr="xsize*ysize" kind="output" name="g"/>
-            <port annotation="NONE" expr="xsize*ysize" kind="output" name="b"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="sigmas"/>
         </node>
-        <edge kind="fifo" source="Read_YUV" sourceport="y" target="Sift"
-            targetport="input" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="r" target="Writeppm"
-            targetport="r" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="g" target="Writeppm"
-            targetport="g" type="uchar"/>
-        <edge kind="fifo" source="Sift" sourceport="b" target="Writeppm"
-            targetport="b" type="uchar"/>
+        <node id="Init2" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="InitSift">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesW_g" type=" int * "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesH_g" type=" int * "/>
+                <param direction="OUT" isConfig="false" name="sigmas" type=" float * "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="sigmas"/>
+        </node>
+        <node id="Init3" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="InitSift">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesW_g" type=" int * "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesH_g" type=" int * "/>
+                <param direction="OUT" isConfig="false" name="sigmas" type=" float * "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="sigmas"/>
+        </node>
+        <node id="extreme" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="extreme">
+                <param direction="OUT" isConfig="false"
+                    name="keyPointList" type="pointList* "/>
+                <param direction="IN" isConfig="false" name="dog" type="&#xd;&#xa;&#x9;&#x9;&#x9; float * "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+            </loop>
+            <port annotation="NONE" expr="0" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="0" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="0" kind="input" name="dog"/>
+            <port annotation="NONE" expr="0" kind="output" name="keyPointList"/>
+        </node>
+        <node id="Init4" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="InitSift">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesW_g" type=" int * "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesH_g" type=" int * "/>
+                <param direction="OUT" isConfig="false" name="sigmas" type=" float * "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="sigmas"/>
+        </node>
+        <node id="Orientation" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="orientation">
+                <param direction="IN" isConfig="false"
+                    name="keyPointList" type="pointList* "/>
+                <param direction="OUT" isConfig="false"
+                    name="keyPointListCP" type="&#xd;&#xa;&#x9;&#x9;&#x9;&#x9; pointList* "/>
+                <param direction="IN" isConfig="false" name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9;&#x9;&#x9; float*  "/>
+                <param direction="IN" isConfig="false" name="sigmas" type="&#xd;&#xa;                 float*  "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;                 int* "/>
+            </loop>
+            <port annotation="NONE" expr="0" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="0" kind="input" name="sigmas"/>
+            <port annotation="NONE" expr="0" kind="input" name="keyPointList"/>
+            <port annotation="NONE" expr="0" kind="input" name="scaleSpace"/>
+            <port annotation="NONE" expr="0" kind="output" name="keyPointListCP"/>
+        </node>
+        <node id="Init5" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="InitSift">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesW_g" type=" int * "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesH_g" type=" int * "/>
+                <param direction="OUT" isConfig="false" name="sigmas" type=" float * "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="sigmas"/>
+        </node>
+        <node id="Render" kind="actor">
+            <port annotation="NONE" expr="0" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="0" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="0" kind="input" name="sigmas"/>
+            <port annotation="NONE" expr="0" kind="input" name="keyPointList"/>
+            <port annotation="NONE" expr="0" kind="output" name="r"/>
+            <port annotation="NONE" expr="0" kind="output" name="g"/>
+            <port annotation="NONE" expr="0" kind="output" name="b"/>
+        </node>
+        <node id="Init6" kind="actor">
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="0" kind="output" name="sigmas"/>
+        </node>
+        <edge kind="fifo" source="Init1" sourceport="octavesW_g"
+            target="BuildOB" targetport="octavesW" type="void"/>
+        <edge kind="fifo" source="Init1" sourceport="octavesH_g"
+            target="BuildOB" targetport="octavesH" type="void"/>
+        <edge kind="fifo" source="Read_YUV" sourceport="y"
+            target="BuildOB" targetport="img" type="void"/>
+        <edge kind="fifo" source="Init2" sourceport="octavesW_g"
+            target="BuildSS" targetport="octavesW" type="void"/>
+        <edge kind="fifo" source="Init2" sourceport="octavesH_g"
+            target="BuildSS" targetport="octavesH" type="void"/>
+        <edge kind="fifo" source="Init2" sourceport="sigmas"
+            target="BuildSS" targetport="sigmas" type="void"/>
+        <edge kind="fifo" source="BuildOB" sourceport="octaves"
+            target="BuildSS" targetport="octaves" type="void"/>
+        <edge kind="fifo" source="Init3" sourceport="octavesW_g"
+            target="DoG" targetport="octavesW" type="void"/>
+        <edge kind="fifo" source="Init3" sourceport="octavesH_g"
+            target="DoG" targetport="octavesH" type="void"/>
+        <edge kind="fifo" source="BuildSS" sourceport="scaleSpace"
+            target="DoG" targetport="scaleSpace" type="void"/>
+        <edge kind="fifo" source="Init4" sourceport="octavesW_g"
+            target="extreme" targetport="octavesW" type="void"/>
+        <edge kind="fifo" source="Init4" sourceport="octavesH_g"
+            target="extreme" targetport="octavesH" type="void"/>
+        <edge kind="fifo" source="DoG" sourceport="dog" target="extreme"
+            targetport="dog" type="void"/>
+        <edge kind="fifo" source="Init5" sourceport="octavesW_g"
+            target="Orientation" targetport="octavesW" type="void"/>
+        <edge kind="fifo" source="Init5" sourceport="sigmas"
+            target="Orientation" targetport="sigmas" type="void"/>
+        <edge kind="fifo" source="extreme" sourceport="keyPointList"
+            target="Orientation" targetport="keyPointList" type="void"/>
+        <edge kind="fifo" source="BuildSS" sourceport="scaleSpaceCP"
+            target="Orientation" targetport="scaleSpace" type="void"/>
+        <edge kind="fifo" source="Render" sourceport="r"
+            target="Writeppm" targetport="r" type="void"/>
+        <edge kind="fifo" source="Render" sourceport="g"
+            target="Writeppm" targetport="g" type="void"/>
+        <edge kind="fifo" source="Render" sourceport="b"
+            target="Writeppm" targetport="b" type="void"/>
+        <edge kind="fifo" source="Init6" sourceport="octavesW_g"
+            target="Render" targetport="octavesW" type="void"/>
+        <edge kind="fifo" source="Init6" sourceport="octavesH_g"
+            target="Render" targetport="octavesH" type="void"/>
+        <edge kind="fifo" source="Init6" sourceport="sigmas"
+            target="Render" targetport="sigmas" type="void"/>
+        <edge kind="fifo" source="Orientation"
+            sourceport="keyPointListCP" target="Render"
+            targetport="keyPointList" type="void"/>
+        <edge kind="fifo" source="Read_YUV" sourceport="yCP"
+            target="Writeppm" targetport="input" type="void"/>
         <edge kind="dependency" source="xsize" target="Read_YUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="Read_YUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Writeppm" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="Writeppm" targetport="ysize"/>
-        <edge kind="dependency" source="xsize" target="Sift" targetport="xsize"/>
-        <edge kind="dependency" source="ysize" target="Sift" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init1" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init1" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init2" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init2" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init3" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init3" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init4" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init4" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init5" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init5" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init6" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init6" targetport="ysize"/>
     </graph>
 </graphml>

@@ -23,7 +23,7 @@
             <variable name="xsize" value="352"/>
         </data>
         <node id="Read_YUV">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@74670964</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@6db25265</data>
             <data key="name">Read_YUV</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -33,7 +33,7 @@
             </data>
         </node>
         <node id="Writeppm">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1899bff0</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@563f9d26</data>
             <data key="name">Writeppm</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -43,7 +43,7 @@
             </data>
         </node>
         <node id="Sift">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1608322e</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@6a665606</data>
             <data key="name">Sift</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>

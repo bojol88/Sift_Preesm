@@ -11,7 +11,12 @@
             <task name="top_display/Writeppm"/>
             <task name="top_display/Read_YUV"/>
             <task name="top_display"/>
-            <task name="top_display/Sift"/>
+            <task name="top_display/extreme"/>
+            <task name="top_display/BuildOB"/>
+            <task name="top_display/Orientation"/>
+            <task name="top_display/BuildSS"/>
+            <task name="top_display/DoG"/>
+            <task name="top_display/Render"/>
         </constraintGroup>
     </constraints>
     <relativeconstraints excelUrl=""/>
@@ -24,7 +29,10 @@
         <averageDataSize>1000</averageDataSize>
         <dataTypes>
             <dataType name="char" size="1"/>
+            <dataType name="int" size="4"/>
+            <dataType name="KeyPointListSize" size="12004"/>
             <dataType name="uchar" size="1"/>
+            <dataType name="float" size="4"/>
         </dataTypes>
         <specialVertexOperators>
             <specialVertexOperator path="Core0"/>

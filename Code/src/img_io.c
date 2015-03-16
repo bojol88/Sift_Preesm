@@ -69,13 +69,13 @@ write_pgm(unsigned char* data, int w, int h, const char* filename){
 }// write_pgm ()
 
 void
-write_ppm(unsigned char* r, unsigned char* g, unsigned char* b, int xsize, int ysize) {
+write_ppm(unsigned char* r, unsigned char* g, unsigned char* b, int w, int h) {
     FILE * out_file;
     int i;
 	char filename[256];
-    unsigned char* obuf = (unsigned char*)malloc(3*xsize*ysize*sizeof(unsigned char));
+    unsigned char* obuf = (unsigned char*)malloc(3*w*h*sizeof(unsigned char));
 
-    for(i = 0; i < xsize*ysize; i ++){
+    for(i = 0; i < w*h; i ++){
         obuf[3*i + 0] = r[i];
         obuf[3*i + 1] = g[i];
         obuf[3*i + 2] = b[i];
@@ -84,8 +84,8 @@ write_ppm(unsigned char* r, unsigned char* g, unsigned char* b, int xsize, int y
 	j++;
     out_file = fopen(filename, "wb");
     fprintf(out_file, "P6\n");
-    fprintf(out_file, "%d %d\n255\n", xsize, ysize);
-    fwrite(obuf,sizeof(unsigned char), 3*xsize*ysize, out_file);
+    fprintf(out_file, "%d %d\n255\n", w, h);
+    fwrite(obuf,sizeof(unsigned char), 3*w*h, out_file);
     fclose(out_file);
     free(obuf);
 }// write_ppm()

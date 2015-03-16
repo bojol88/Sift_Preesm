@@ -14,7 +14,7 @@ unsigned char* read_pgm(int* w, int* h, const char* filename);
 void write_pgm(unsigned char* data, int w, int h, const char* filename);
 
 void write_ppm(unsigned char* r, unsigned char* g, unsigned char* b,
-               int xsize, int ysize);
+               int w, int h);
 void write_float_pgm(float* data, int w, int h, const char* filename, int mode);
 
 void draw_red_circle(PPM_IMG* imgPPM, int x, int y, int cR);

@@ -1,10 +1,10 @@
 #include "sift.h"
 #include "img_io.h"
 
-void  render(unsigned char* img, char* out_filename,
+void  render(unsigned char* img,
              int* octavesW, int* octavesH,
              pointList* keyPointList,
-			 float sigmas[MAX_O][MAX_S], 
+			 float sigmas[MAX_O*MAX_S], 
 			 unsigned char* r, unsigned char* g, unsigned char* b){
   
     // common variables
@@ -59,8 +59,7 @@ void  render(unsigned char* img, char* out_filename,
         cR = 
             (int)
             ( sigmas
-              [keyPtr.o]
-              [(int)keyPtr.s] *
+              [keyPtr.o*MAX_S+(int)keyPtr.s] *
               pow(2,keyPtr.o) );
         if(cR <= 1){ // avoid zero radius
             cR = 1;
@@ -82,8 +81,6 @@ void  render(unsigned char* img, char* out_filename,
 		}
 	}
 
-    // write rendered image to output
-    // write_ppm(imgPPM.img_r, imgPPM.img_g, imgPPM.img_b, w, h, out_filename);
 
     // free allocated memory
     free(imgPPM.img_r);
