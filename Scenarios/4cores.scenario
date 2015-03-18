@@ -11,6 +11,7 @@
             <task name="TopDiagram/octavesH"/>
             <task name="TopDiagram/BuildOB"/>
             <task name="TopDiagram"/>
+            <task name="TopDiagram/Extreme"/>
             <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>
@@ -23,6 +24,7 @@
             <task name="TopDiagram/octavesH"/>
             <task name="TopDiagram/BuildOB"/>
             <task name="TopDiagram"/>
+            <task name="TopDiagram/Extreme"/>
             <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>
@@ -35,6 +37,7 @@
             <task name="TopDiagram/octavesH"/>
             <task name="TopDiagram/BuildOB"/>
             <task name="TopDiagram"/>
+            <task name="TopDiagram/Extreme"/>
             <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>
@@ -47,6 +50,7 @@
             <task name="TopDiagram/octavesH"/>
             <task name="TopDiagram/BuildOB"/>
             <task name="TopDiagram"/>
+            <task name="TopDiagram/Extreme"/>
             <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>

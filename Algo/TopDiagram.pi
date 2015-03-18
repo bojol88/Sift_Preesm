@@ -88,6 +88,7 @@
             <port annotation="NONE" expr="mO" kind="output" name="out1"/>
             <port annotation="NONE" expr="mO" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out4"/>
         </node>
         <node id="octavesH" kind="broadcast">
             <port kind="cfg_input" name="mO"/>
@@ -95,6 +96,7 @@
             <port annotation="NONE" expr="mO" kind="output" name="out1"/>
             <port annotation="NONE" expr="mO" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out4"/>
         </node>
         <node id="sigmas" kind="broadcast">
             <port kind="cfg_input" name="mO"/>
@@ -120,6 +122,25 @@
             <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
             <port annotation="NONE" expr="mO*(mS-1)*xsize*ysize"
                 kind="output" name="dog"/>
+        </node>
+        <node id="Extreme" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="extreme">
+                <param direction="OUT" isConfig="false"
+                    name="keyPointList" type="pointList* "/>
+                <param direction="IN" isConfig="false" name="dog" type="&#xd;&#xa;&#x9;&#x9;&#x9; float * "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="mO*(mS-1)*xsize*ysize"
+                kind="input" name="dog"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="1" kind="output" name="keyPointList"/>
         </node>
         <edge kind="fifo" source="ReadYUV" sourceport="y"
             target="BuildOB" targetport="img" type="uchar"/>
@@ -147,6 +168,12 @@
             target="DoG" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out3"
             target="DoG" targetport="octavesH" type="int"/>
+        <edge kind="fifo" source="DoG" sourceport="dog" target="Extreme"
+            targetport="dog" type="float"/>
+        <edge kind="fifo" source="octavesW" sourceport="out4"
+            target="Extreme" targetport="octavesW" type="int"/>
+        <edge kind="fifo" source="octavesH" sourceport="out4"
+            target="Extreme" targetport="octavesH" type="int"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
@@ -168,5 +195,9 @@
         <edge kind="dependency" source="ysize" target="DoG" targetport="ysize"/>
         <edge kind="dependency" source="MAX_O" target="DoG" targetport="mO"/>
         <edge kind="dependency" source="MAX_S" target="DoG" targetport="mS"/>
+        <edge kind="dependency" source="xsize" target="Extreme" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Extreme" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="Extreme" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="Extreme" targetport="mS"/>
     </graph>
 </graphml>
