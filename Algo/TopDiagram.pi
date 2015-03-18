@@ -90,6 +90,7 @@
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
             <port annotation="NONE" expr="mO" kind="output" name="out4"/>
             <port annotation="NONE" expr="mO" kind="output" name="out5"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out6"/>
         </node>
         <node id="octavesH" kind="broadcast">
             <port kind="cfg_input" name="mO"/>
@@ -98,6 +99,7 @@
             <port annotation="NONE" expr="mO" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
             <port annotation="NONE" expr="mO" kind="output" name="out4"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out5"/>
         </node>
         <node id="sigmas" kind="broadcast">
             <port kind="cfg_input" name="mO"/>
@@ -105,6 +107,7 @@
             <port annotation="NONE" expr="mO*mS" kind="input" name="in"/>
             <port annotation="NONE" expr="mO*mS" kind="output" name="out1"/>
             <port annotation="NONE" expr="mO*mS" kind="output" name="out2"/>
+            <port annotation="NONE" expr="mO*mS" kind="output" name="out3"/>
         </node>
         <node id="DoG" kind="actor">
             <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
@@ -178,8 +181,39 @@
             <port annotation="NONE" expr="mO*mS*xsize*ysize"
                 kind="output" name="out2"/>
         </node>
-        <edge kind="fifo" source="ReadYUV" sourceport="y"
-            target="BuildOB" targetport="img" type="uchar"/>
+        <node id="Render" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="render">
+                <param direction="IN" isConfig="false" name="img" type="unsigned char* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+                <param direction="IN" isConfig="false"
+                    name="keyPointList" type="&#xd;&#xa;             pointList* "/>
+                <param direction="IN" isConfig="false" name="sigmas" type="&#xd;&#xa;&#x9;&#x9;&#x9; float * "/>
+                <param direction="OUT" isConfig="false" name="r" type=" unsigned cha* "/>
+                <param direction="OUT" isConfig="false" name="g" type=" unsined char* "/>
+                <param direction="OUT" isConfig="false" name="b" type=" unsigned char* "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="input" name="img"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="mO*mS" kind="input" name="sigmas"/>
+            <port annotation="NONE" expr="1" kind="input" name="keyPointList"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="r"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="g"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="b"/>
+        </node>
+        <node id="Img" kind="broadcast">
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="input" name="in"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="out1"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="out2"/>
+        </node>
         <edge kind="fifo" source="BuildOB" sourceport="octaves"
             target="BuildSS" targetport="octaves" type="uchar"/>
         <edge kind="fifo" source="Init" sourceport="octavesW_g"
@@ -220,6 +254,21 @@
             target="DoG" targetport="scaleSpace" type="float"/>
         <edge kind="fifo" source="scaleSpace" sourceport="out2"
             target="Orientation" targetport="scaleSpace" type="float"/>
+        <edge kind="fifo" source="ReadYUV" sourceport="y" target="Img"
+            targetport="in" type="uchar"/>
+        <edge kind="fifo" source="Img" sourceport="out1"
+            target="BuildOB" targetport="img" type="uchar"/>
+        <edge kind="fifo" source="Img" sourceport="out2" target="Render"
+            targetport="img" type="uchar"/>
+        <edge kind="fifo" source="octavesW" sourceport="out6"
+            target="Render" targetport="octavesW" type="int"/>
+        <edge kind="fifo" source="octavesH" sourceport="out5"
+            target="Render" targetport="octavesH" type="int"/>
+        <edge kind="fifo" source="sigmas" sourceport="out3"
+            target="Render" targetport="sigmas" type="float"/>
+        <edge kind="fifo" source="Orientation"
+            sourceport="keyPointListCP" target="Render"
+            targetport="keyPointList" type="KeyPointListSize"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
@@ -253,5 +302,11 @@
         <edge kind="dependency" source="ysize" target="scaleSpace" targetport="ysize"/>
         <edge kind="dependency" source="MAX_O" target="scaleSpace" targetport="mO"/>
         <edge kind="dependency" source="MAX_S" target="scaleSpace" targetport="mS"/>
+        <edge kind="dependency" source="xsize" target="Render" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Render" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="Render" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="Render" targetport="mS"/>
+        <edge kind="dependency" source="xsize" target="Img" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Img" targetport="ysize"/>
     </graph>
 </graphml>

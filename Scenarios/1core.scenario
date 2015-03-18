@@ -8,12 +8,14 @@
     <constraints excelUrl="">
         <constraintGroup>
             <operator name="Core0"/>
-            <task name="TopDiagram/BuildOB"/>
-            <task name="TopDiagram/Orientation"/>
             <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/Orientation"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram/Render"/>
             <task name="TopDiagram"/>
-            <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/Img"/>
             <task name="TopDiagram/octavesW"/>
             <task name="TopDiagram/scaleSpace"/>
             <task name="TopDiagram/Extreme"/>
