@@ -214,6 +214,21 @@
             <port annotation="NONE" expr="xsize*ysize" kind="output" name="out1"/>
             <port annotation="NONE" expr="xsize*ysize" kind="output" name="out2"/>
         </node>
+        <node id="WritePGM" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/img_io.h</data>
+            <loop name="write_ppm">
+                <param direction="IN" isConfig="false" name="r" type="unsigned cha* "/>
+                <param direction="IN" isConfig="false" name="g" type=" unsined char* "/>
+                <param direction="IN" isConfig="false" name="b" type=" unsigned char* "/>
+                <param direction="IN" isConfig="true" name="w" type="&#xa;               int "/>
+                <param direction="IN" isConfig="true" name="h" type=" int "/>
+            </loop>
+            <port kind="cfg_input" name="w"/>
+            <port kind="cfg_input" name="h"/>
+            <port annotation="NONE" expr="w*h" kind="input" name="r"/>
+            <port annotation="NONE" expr="w*h" kind="input" name="g"/>
+            <port annotation="NONE" expr="w*h" kind="input" name="b"/>
+        </node>
         <edge kind="fifo" source="BuildOB" sourceport="octaves"
             target="BuildSS" targetport="octaves" type="uchar"/>
         <edge kind="fifo" source="Init" sourceport="octavesW_g"
@@ -269,6 +284,12 @@
         <edge kind="fifo" source="Orientation"
             sourceport="keyPointListCP" target="Render"
             targetport="keyPointList" type="KeyPointListSize"/>
+        <edge kind="fifo" source="Render" sourceport="r"
+            target="WritePGM" targetport="r" type="uchar"/>
+        <edge kind="fifo" source="Render" sourceport="g"
+            target="WritePGM" targetport="g" type="uchar"/>
+        <edge kind="fifo" source="Render" sourceport="b"
+            target="WritePGM" targetport="b" type="uchar"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
@@ -308,5 +329,7 @@
         <edge kind="dependency" source="MAX_S" target="Render" targetport="mS"/>
         <edge kind="dependency" source="xsize" target="Img" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="Img" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="WritePGM" targetport="w"/>
+        <edge kind="dependency" source="ysize" target="WritePGM" targetport="h"/>
     </graph>
 </graphml>
