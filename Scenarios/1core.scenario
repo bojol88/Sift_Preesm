@@ -8,17 +8,17 @@
     <constraints excelUrl="">
         <constraintGroup>
             <operator name="Core0"/>
-            <task name="TopDiagram/BuildOB"/>
-            <task name="TopDiagram/Render"/>
-            <task name="TopDiagram/Orientation"/>
             <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/Orientation"/>
+            <task name="TopDiagram/Render"/>
+            <task name="TopDiagram/BuildOB"/>
             <task name="TopDiagram"/>
-            <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/Init"/>
             <task name="TopDiagram/Img"/>
             <task name="TopDiagram/octavesW"/>
-            <task name="TopDiagram/WritePGM"/>
             <task name="TopDiagram/scaleSpace"/>
+            <task name="TopDiagram/WritePGM"/>
             <task name="TopDiagram/Extreme"/>
             <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/ReadYUV"/>
@@ -34,6 +34,7 @@
         <mainComNode>shared_mem</mainComNode>
         <averageDataSize>1000</averageDataSize>
         <dataTypes>
+            <dataType name="pointList_t" size="12004"/>
             <dataType name="char" size="1"/>
             <dataType name="int" size="4"/>
             <dataType name="KeyPointListSize" size="12004"/>

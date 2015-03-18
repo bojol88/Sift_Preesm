@@ -26,7 +26,7 @@
             <variable name="MAX_S" value="6"/>
         </data>
         <node id="ReadYUV">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@2bc412b0</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@15cdbc13</data>
             <data key="name">ReadYUV</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -36,7 +36,7 @@
             </data>
         </node>
         <node id="Init">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@55a6f742</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@75f68e93</data>
             <data key="name">Init</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -48,7 +48,7 @@
             </data>
         </node>
         <node id="BuildOB">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@44b339fc</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@e0a9166</data>
             <data key="name">BuildOB</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -59,7 +59,7 @@
             </data>
         </node>
         <node id="BuildSS">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@52a3f2a0</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@57cfc6bd</data>
             <data key="name">BuildSS</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -96,7 +96,7 @@
             </data>
         </node>
         <node id="DoG">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@98e10c3</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@a00cf55</data>
             <data key="name">DoG</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -108,7 +108,7 @@
             </data>
         </node>
         <node id="Extreme">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4dee771b</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@3b2bda94</data>
             <data key="name">Extreme</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -120,7 +120,7 @@
             </data>
         </node>
         <node id="Orientation">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@62cdb595</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@3c1b48e5</data>
             <data key="name">Orientation</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -143,7 +143,7 @@
             </data>
         </node>
         <node id="Render">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@2f4c7be0</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@234ed137</data>
             <data key="name">Render</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -164,7 +164,7 @@
             </data>
         </node>
         <node id="WritePGM">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4658c762</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@b8983fd</data>
             <data key="name">WritePGM</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -304,7 +304,7 @@
             <data key="edge_cons">1.0</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">1.0</data>
-            <data key="data_type">KeyPointListSize</data>
+            <data key="data_type">pointList_t</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
@@ -414,7 +414,7 @@
             <data key="edge_cons">1.0</data>
             <data key="edge_delay">0</data>
             <data key="edge_prod">1.0</data>
-            <data key="data_type">KeyPointListSize</data>
+            <data key="data_type">pointList_t</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
