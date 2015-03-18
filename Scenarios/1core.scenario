@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scenario>
     <files>
-        <algorithm url="/SiftPreesm/Algo/top_display.pi"/>
+        <algorithm url="/SiftPreesm/Algo/TopDiagram.pi"/>
         <architecture url="/SiftPreesm/Archi/1CoreX86.slam"/>
         <codegenDirectory url="/SiftPreesm/Code/generated"/>
     </files>
     <constraints excelUrl="">
         <constraintGroup>
             <operator name="Core0"/>
-            <task name="top_display/Writeppm"/>
-            <task name="top_display/Read_YUV"/>
-            <task name="top_display"/>
-            <task name="top_display/extreme"/>
-            <task name="top_display/BuildOB"/>
-            <task name="top_display/Orientation"/>
-            <task name="top_display/BuildSS"/>
-            <task name="top_display/DoG"/>
-            <task name="top_display/Render"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram"/>
+            <task name="TopDiagram/sigmas"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/ReadYUV"/>
+            <task name="TopDiagram/DoG"/>
+            <task name="TopDiagram/octavesW"/>
         </constraintGroup>
     </constraints>
     <relativeconstraints excelUrl=""/>

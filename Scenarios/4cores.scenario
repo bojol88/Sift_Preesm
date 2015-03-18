@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+    <files>
+        <algorithm url="/SiftPreesm/Algo/TopDiagram.pi"/>
+        <architecture url="/SiftPreesm/Archi/4coresX86.slam"/>
+        <codegenDirectory url="/SiftPreesm/Code/generated"/>
+    </files>
+    <constraints excelUrl="">
+        <constraintGroup>
+            <operator name="Core2"/>
+            <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram"/>
+            <task name="TopDiagram/sigmas"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/ReadYUV"/>
+            <task name="TopDiagram/DoG"/>
+            <task name="TopDiagram/octavesW"/>
+        </constraintGroup>
+        <constraintGroup>
+            <operator name="Core0"/>
+            <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram"/>
+            <task name="TopDiagram/sigmas"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/ReadYUV"/>
+            <task name="TopDiagram/DoG"/>
+            <task name="TopDiagram/octavesW"/>
+        </constraintGroup>
+        <constraintGroup>
+            <operator name="Core3"/>
+            <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram"/>
+            <task name="TopDiagram/sigmas"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/ReadYUV"/>
+            <task name="TopDiagram/DoG"/>
+            <task name="TopDiagram/octavesW"/>
+        </constraintGroup>
+        <constraintGroup>
+            <operator name="Core1"/>
+            <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram"/>
+            <task name="TopDiagram/sigmas"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/ReadYUV"/>
+            <task name="TopDiagram/DoG"/>
+            <task name="TopDiagram/octavesW"/>
+        </constraintGroup>
+    </constraints>
+    <relativeconstraints excelUrl=""/>
+    <timings excelUrl="">
+        <memcpyspeed opname="x86" setuptime="1" timeperunit="1.0"/>
+    </timings>
+    <simuParams>
+        <mainCore>Core0</mainCore>
+        <mainComNode>shared_mem</mainComNode>
+        <averageDataSize>1000</averageDataSize>
+        <dataTypes>
+            <dataType name="char" size="1"/>
+            <dataType name="int" size="4"/>
+            <dataType name="KeyPointListSize" size="12004"/>
+            <dataType name="uchar" size="1"/>
+            <dataType name="float" size="4"/>
+        </dataTypes>
+        <specialVertexOperators>
+            <specialVertexOperator path="Core3"/>
+            <specialVertexOperator path="Core0"/>
+            <specialVertexOperator path="Core2"/>
+            <specialVertexOperator path="Core1"/>
+        </specialVertexOperators>
+        <numberOfTopExecutions>1</numberOfTopExecutions>
+    </simuParams>
+    <variables excelUrl=""/>
+    <parameterValues/>
+</scenario>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+   <vertices>
+      <vertex id="shared_mem" x="293" y="125"/>
+      <vertex id="Core0" x="149" y="94"/>
+      <vertex id="Core1" x="153" y="176"/>
+      <vertex id="Core2" x="439" y="187"/>
+      <vertex id="Core3" x="435" y="95"/>
+   </vertices>
+</layout>

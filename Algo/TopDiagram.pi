@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <graph edgedefault="directed">
+        <data key="name">TopDiagram</data>
+        <node expr="352" id="xsize" kind="param"/>
+        <node expr="288" id="ysize" kind="param"/>
+        <node expr="6" id="MAX_O" kind="param"/>
+        <node expr="6" id="MAX_S" kind="param"/>
+        <node id="ReadYUV" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/yuvRead.h</data>
+            <loop name="readYUV">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="OUT" isConfig="false" name="y" type=" unsigned char *"/>
+            </loop>
+            <init name="initReadYUV">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+            </init>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="output" name="y"/>
+        </node>
+        <node id="Init" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="InitSift">
+                <param direction="IN" isConfig="true" name="xsize" type="int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesW_g" type=" int * "/>
+                <param direction="OUT" isConfig="false"
+                    name="octavesH_g" type=" int * "/>
+                <param direction="OUT" isConfig="false" name="sigmas" type=" float * "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="mO" kind="output" name="octavesW_g"/>
+            <port annotation="NONE" expr="mO" kind="output" name="octavesH_g"/>
+            <port annotation="NONE" expr="mO*mS" kind="output" name="sigmas"/>
+        </node>
+        <node id="BuildOB" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="buildOB">
+                <param direction="IN" isConfig="false" name="img" type="unsigned char* "/>
+                <param direction="OUT" isConfig="false" name="octaves" type="&#xd;&#xa;             unsigned char* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+            </loop>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="xsize*ysize" kind="input" name="img"/>
+            <port annotation="NONE" expr="mO*xsize*ysize" kind="output" name="octaves"/>
+        </node>
+        <node id="BuildSS" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="buildSS">
+                <param direction="IN" isConfig="false" name="octaves" type="unsigned char* "/>
+                <param direction="OUT" isConfig="false"
+                    name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9;&#x9; float* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+                <param direction="IN" isConfig="false" name="sigmas" type="&#xd;&#xa;             float* "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="mO*xsize*ysize" kind="input" name="octaves"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="mO*mS" kind="input" name="sigmas"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="output" name="scaleSpace"/>
+        </node>
+        <node id="octavesW" kind="broadcast">
+            <port kind="cfg_input" name="mO"/>
+            <port annotation="NONE" expr="mO" kind="input" name="in"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out1"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out2"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out3"/>
+        </node>
+        <node id="octavesH" kind="broadcast">
+            <port kind="cfg_input" name="mO"/>
+            <port annotation="NONE" expr="mO" kind="input" name="in"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out1"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out2"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out3"/>
+        </node>
+        <node id="sigmas" kind="broadcast">
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="mO*mS" kind="input" name="in"/>
+            <port annotation="NONE" expr="mO*mS" kind="output" name="out1"/>
+        </node>
+        <node id="DoG" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="DoG">
+                <param direction="OUT" isConfig="false" name="dog" type="float* "/>
+                <param direction="IN" isConfig="false" name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9; float* "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;         int* "/>
+                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="input" name="scaleSpace"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
+            <port annotation="NONE" expr="mO*(mS-1)*xsize*ysize"
+                kind="output" name="dog"/>
+        </node>
+        <edge kind="fifo" source="ReadYUV" sourceport="y"
+            target="BuildOB" targetport="img" type="uchar"/>
+        <edge kind="fifo" source="BuildOB" sourceport="octaves"
+            target="BuildSS" targetport="octaves" type="uchar"/>
+        <edge kind="fifo" source="Init" sourceport="octavesW_g"
+            target="octavesW" targetport="in" type="int"/>
+        <edge kind="fifo" source="Init" sourceport="octavesH_g"
+            target="octavesH" targetport="in" type="int"/>
+        <edge kind="fifo" source="Init" sourceport="sigmas"
+            target="sigmas" targetport="in" type="float"/>
+        <edge kind="fifo" source="octavesW" sourceport="out1"
+            target="BuildOB" targetport="octavesW" type="int"/>
+        <edge kind="fifo" source="octavesW" sourceport="out2"
+            target="BuildSS" targetport="octavesW" type="int"/>
+        <edge kind="fifo" source="octavesH" sourceport="out1"
+            target="BuildOB" targetport="octavesH" type="int"/>
+        <edge kind="fifo" source="octavesH" sourceport="out2"
+            target="BuildSS" targetport="octavesH" type="int"/>
+        <edge kind="fifo" source="sigmas" sourceport="out1"
+            target="BuildSS" targetport="sigmas" type="float"/>
+        <edge kind="fifo" source="BuildSS" sourceport="scaleSpace"
+            target="DoG" targetport="scaleSpace" type="float"/>
+        <edge kind="fifo" source="octavesW" sourceport="out3"
+            target="DoG" targetport="octavesW" type="int"/>
+        <edge kind="fifo" source="octavesH" sourceport="out3"
+            target="DoG" targetport="octavesH" type="int"/>
+        <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Init" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="Init" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="Init" targetport="mS"/>
+        <edge kind="dependency" source="MAX_O" target="BuildOB" targetport="mO"/>
+        <edge kind="dependency" source="xsize" target="BuildOB" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="BuildOB" targetport="ysize"/>
+        <edge kind="dependency" source="xsize" target="BuildSS" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="BuildSS" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="BuildSS" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="BuildSS" targetport="mS"/>
+        <edge kind="dependency" source="MAX_O" target="octavesW" targetport="mO"/>
+        <edge kind="dependency" source="MAX_O" target="octavesH" targetport="mO"/>
+        <edge kind="dependency" source="MAX_O" target="sigmas" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="sigmas" targetport="mS"/>
+        <edge kind="dependency" source="xsize" target="DoG" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="DoG" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="DoG" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="DoG" targetport="mS"/>
+    </graph>
+</graphml>
