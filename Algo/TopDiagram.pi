@@ -258,7 +258,7 @@
         <edge kind="fifo" source="octavesH" sourceport="out4"
             target="Extreme" targetport="octavesH" type="int"/>
         <edge kind="fifo" source="Extreme" sourceport="keyPointList"
-            target="Orientation" targetport="keyPointList" type="pointList_t"/>
+            target="Orientation" targetport="keyPointList" type="pointList"/>
         <edge kind="fifo" source="octavesW" sourceport="out5"
             target="Orientation" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="sigmas" sourceport="out2"
@@ -283,7 +283,7 @@
             target="Render" targetport="sigmas" type="float"/>
         <edge kind="fifo" source="Orientation"
             sourceport="keyPointListCP" target="Render"
-            targetport="keyPointList" type="pointList_t"/>
+            targetport="keyPointList" type="pointList"/>
         <edge kind="fifo" source="Render" sourceport="r"
             target="WritePGM" targetport="r" type="uchar"/>
         <edge kind="fifo" source="Render" sourceport="g"

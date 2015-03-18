@@ -66,8 +66,8 @@ void initReadYUV(int xSize, int ySize) {
    ======================================================================*/
 void readYUV(int xSize, int ySize, unsigned char *y) {
 	int i;
-	unsigned char* u = (unsigned char*)malloc(xsize * ysize * sizeof(unsigned char));
-	unsigned char* v = (unsigned char*)malloc(xsize * ysize * sizeof(unsigned char));
+	unsigned char* u = (unsigned char*)malloc(xSize * ySize * sizeof(unsigned char));
+	unsigned char* v = (unsigned char*)malloc(xSize * ySize * sizeof(unsigned char));
     if( ftell(ptfile)/(xSize*ySize + xSize*ySize/2) >=NB_FRAME){
     	unsigned int time = 0;
         rewind(ptfile);

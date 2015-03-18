@@ -1,39 +1,35 @@
-﻿La génération a démarré 18/03/2015 02:41:24.
+﻿La génération a démarré 18/03/2015 11:03:39.
      1>Projet "C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\sobel.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\pthread-2.8.0\include" /IC:\Users\Sylvain\workspace\SiftPreesm\Code\include /I"C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include" /Zi /nologo /W1 /WX- /Od /Ob0 /Oy- /D X1_CORE /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"sobel.dir\Debug\\" /Fd"sobel.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt  -std=c99 ..\..\generated\Core0.c ..\..\src\DoG.c ..\..\src\buildOB.c ..\..\src\buildSS.c ..\..\src\communication.c ..\..\src\extreme.c ..\..\src\img_io.c ..\..\src\keypoint.c ..\..\src\main.c ..\..\src\ori.c ..\..\src\render.c ..\..\src\sift.c ..\..\src\yuvRead.c
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\pthread-2.8.0\include" /IC:\Users\Sylvain\workspace\SiftPreesm\Code\include /I"C:\Users\Sylvain\workspace\SiftPreesm\Code\lib\SDL-1.2.15\include" /Zi /nologo /W1 /WX- /Od /Ob0 /Oy- /D X1_CORE /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"sobel.dir\Debug\\" /Fd"sobel.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt  -std=c99 ..\..\generated\Core0.c
      1>cl : Ligne de commande warning D9002: option '-std=c99' inconnue ignorée
          Core0.c
-     1>..\..\generated\Core0.c(52): error C2143: erreur de syntaxe : absence de '{' avant '*'
-     1>..\..\generated\Core0.c(52): error C2059: erreur de syntaxe : '<cv-qualifer>'
-     1>..\..\generated\Core0.c(70): error C2143: erreur de syntaxe : absence de '{' avant '*'
-     1>..\..\generated\Core0.c(70): error C2059: erreur de syntaxe : '<cv-qualifer>'
-     1>..\..\generated\Core0.c(122): error C2065: 'keyPointList__keyPointList__0' : identificateur non déclaré
-     1>..\..\generated\Core0.c(123): error C2065: 'keyPointList__keyPointList__0' : identificateur non déclaré
-     1>..\..\generated\Core0.c(123): error C2065: 'keyPointListCP__keyPointList__0' : identificateur non déclaré
-     1>..\..\generated\Core0.c(124): error C2065: 'keyPointListCP__keyPointList__0' : identificateur non déclaré
-         DoG.c
-         buildOB.c
-         buildSS.c
-         communication.c
-         extreme.c
-         img_io.c
-         keypoint.c
-         main.c
-         ori.c
-         render.c
-         sift.c
-     1>..\..\src\sift.c(46): warning C4133: 'fonction' : types incompatibles - de 'float [3649536]' à 'int *'
-     1>..\..\src\sift.c(46): warning C4133: 'fonction' : types incompatibles - de 'int [6]' à 'float *'
-     1>..\..\src\sift.c(46): warning C4020: 'buildSS' : paramètres réels trop nombreux
-         yuvRead.c
-     1>..\..\src\yuvRead.c(69): error C2065: 'xsize' : identificateur non déclaré
-     1>..\..\src\yuvRead.c(69): error C2065: 'ysize' : identificateur non déclaré
-     1>..\..\src\yuvRead.c(70): error C2065: 'xsize' : identificateur non déclaré
-     1>..\..\src\yuvRead.c(70): error C2065: 'ysize' : identificateur non déclaré
-         Génération de code en cours...
-     1>Génération du projet "C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\sobel.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
+     1>C:\Users\Sylvain\workspace\SiftPreesm\Code\include\sift.h(13): warning C4005: 'VERBOSE' : redéfinition de macro
+                 c:\users\sylvain\workspace\siftpreesm\code\generated\../include/x86.h(14) : voir la définition précédente de 'VERBOSE'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\sobel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "..\..\lib\SDL-1.2.15\lib\x86\SDLmain.lib" "..\..\lib\SDL-1.2.15\lib\x86\SDL.lib" "..\..\lib\pthread-2.8.0\lib\pthreadVC2.lib" "..\..\lib\pthread-2.8.0\lib\pthreadVCE2.lib" "..\..\lib\pthread-2.8.0\lib\pthreadVSE2.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Sylvain/workspace/SiftPreesm/Code/bin/VS_main/Debug/sobel.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug sobel.dir\Debug\buildOB.obj
+         sobel.dir\Debug\buildSS.obj
+         sobel.dir\Debug\clock.obj
+         sobel.dir\Debug\communication.obj
+         sobel.dir\Debug\displayRGB.obj
+         sobel.dir\Debug\DoG.obj
+         sobel.dir\Debug\dump.obj
+         sobel.dir\Debug\extreme.obj
+         sobel.dir\Debug\fifo.obj
+         sobel.dir\Debug\img_io.obj
+         sobel.dir\Debug\keypoint.obj
+         sobel.dir\Debug\main.obj
+         sobel.dir\Debug\memory.obj
+         sobel.dir\Debug\ori.obj
+         sobel.dir\Debug\render.obj
+         sobel.dir\Debug\sift.obj
+         sobel.dir\Debug\sobel.obj
+         sobel.dir\Debug\splitMerge.obj
+         sobel.dir\Debug\yuvRead.obj
+         sobel.dir\Debug\Core0.obj
+         sobel.vcxproj -> C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\Debug\sobel.exe
+     1>Génération du projet "C:\Users\Sylvain\workspace\SiftPreesm\Code\bin\VS_main\sobel.vcxproj" terminée (Build cible(s)).
 
-ÉCHEC de la build.
+La génération a réussi.
 
-Temps écoulé 00:00:03.59
+Temps écoulé 00:00:02.94
