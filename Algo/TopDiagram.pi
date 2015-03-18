@@ -89,6 +89,7 @@
             <port annotation="NONE" expr="mO" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
             <port annotation="NONE" expr="mO" kind="output" name="out4"/>
+            <port annotation="NONE" expr="mO" kind="output" name="out5"/>
         </node>
         <node id="octavesH" kind="broadcast">
             <port kind="cfg_input" name="mO"/>
@@ -103,6 +104,7 @@
             <port kind="cfg_input" name="mS"/>
             <port annotation="NONE" expr="mO*mS" kind="input" name="in"/>
             <port annotation="NONE" expr="mO*mS" kind="output" name="out1"/>
+            <port annotation="NONE" expr="mO*mS" kind="output" name="out2"/>
         </node>
         <node id="DoG" kind="actor">
             <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
@@ -142,6 +144,40 @@
             <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
             <port annotation="NONE" expr="1" kind="output" name="keyPointList"/>
         </node>
+        <node id="Orientation" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="orientation">
+                <param direction="IN" isConfig="false"
+                    name="keyPointList" type="pointList* "/>
+                <param direction="OUT" isConfig="false"
+                    name="keyPointListCP" type="&#xd;&#xa;&#x9;&#x9;&#x9;&#x9; pointList* "/>
+                <param direction="IN" isConfig="false" name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9;&#x9;&#x9; float*  "/>
+                <param direction="IN" isConfig="false" name="sigmas" type="&#xd;&#xa;                 float*  "/>
+                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;                 int* "/>
+            </loop>
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="1" kind="input" name="keyPointList"/>
+            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
+            <port annotation="NONE" expr="mO*mS" kind="input" name="sigmas"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="input" name="scaleSpace"/>
+            <port annotation="NONE" expr="1" kind="output" name="keyPointListCP"/>
+        </node>
+        <node id="scaleSpace" kind="broadcast">
+            <port kind="cfg_input" name="xsize"/>
+            <port kind="cfg_input" name="ysize"/>
+            <port kind="cfg_input" name="mO"/>
+            <port kind="cfg_input" name="mS"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="input" name="in"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="output" name="out1"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="output" name="out2"/>
+        </node>
         <edge kind="fifo" source="ReadYUV" sourceport="y"
             target="BuildOB" targetport="img" type="uchar"/>
         <edge kind="fifo" source="BuildOB" sourceport="octaves"
@@ -162,8 +198,6 @@
             target="BuildSS" targetport="octavesH" type="int"/>
         <edge kind="fifo" source="sigmas" sourceport="out1"
             target="BuildSS" targetport="sigmas" type="float"/>
-        <edge kind="fifo" source="BuildSS" sourceport="scaleSpace"
-            target="DoG" targetport="scaleSpace" type="float"/>
         <edge kind="fifo" source="octavesW" sourceport="out3"
             target="DoG" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out3"
@@ -174,6 +208,18 @@
             target="Extreme" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out4"
             target="Extreme" targetport="octavesH" type="int"/>
+        <edge kind="fifo" source="Extreme" sourceport="keyPointList"
+            target="Orientation" targetport="keyPointList" type="KeyPointListSize"/>
+        <edge kind="fifo" source="octavesW" sourceport="out5"
+            target="Orientation" targetport="octavesW" type="int"/>
+        <edge kind="fifo" source="sigmas" sourceport="out2"
+            target="Orientation" targetport="sigmas" type="float"/>
+        <edge kind="fifo" source="BuildSS" sourceport="scaleSpace"
+            target="scaleSpace" targetport="in" type="float"/>
+        <edge kind="fifo" source="scaleSpace" sourceport="out1"
+            target="DoG" targetport="scaleSpace" type="float"/>
+        <edge kind="fifo" source="scaleSpace" sourceport="out2"
+            target="Orientation" targetport="scaleSpace" type="float"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
@@ -199,5 +245,13 @@
         <edge kind="dependency" source="ysize" target="Extreme" targetport="ysize"/>
         <edge kind="dependency" source="MAX_O" target="Extreme" targetport="mO"/>
         <edge kind="dependency" source="MAX_S" target="Extreme" targetport="mS"/>
+        <edge kind="dependency" source="xsize" target="Orientation" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="Orientation" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="Orientation" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="Orientation" targetport="mS"/>
+        <edge kind="dependency" source="xsize" target="scaleSpace" targetport="xsize"/>
+        <edge kind="dependency" source="ysize" target="scaleSpace" targetport="ysize"/>
+        <edge kind="dependency" source="MAX_O" target="scaleSpace" targetport="mO"/>
+        <edge kind="dependency" source="MAX_S" target="scaleSpace" targetport="mS"/>
     </graph>
 </graphml>

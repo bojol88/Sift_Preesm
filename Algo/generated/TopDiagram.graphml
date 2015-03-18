@@ -26,7 +26,7 @@
             <variable name="MAX_S" value="6"/>
         </data>
         <node id="ReadYUV">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@42bb2d13</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@50113164</data>
             <data key="name">ReadYUV</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -36,7 +36,7 @@
             </data>
         </node>
         <node id="Init">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@e8c5c9f</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@18c1c54d</data>
             <data key="name">Init</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -48,7 +48,7 @@
             </data>
         </node>
         <node id="BuildOB">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@2114d22f</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@59804eed</data>
             <data key="name">BuildOB</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -59,7 +59,7 @@
             </data>
         </node>
         <node id="BuildSS">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@5df31ca0</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@76bdd782</data>
             <data key="name">BuildSS</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -96,7 +96,7 @@
             </data>
         </node>
         <node id="DoG">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@3dc7c90</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@298fd4b5</data>
             <data key="name">DoG</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -108,9 +108,32 @@
             </data>
         </node>
         <node id="Extreme">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@75d3eb</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@21d5cc64</data>
             <data key="name">Extreme</data>
             <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="Orientation">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@5b5dca96</data>
+            <data key="name">Orientation</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="scaleSpace">
+            <data key="name">scaleSpace</data>
+            <data key="kind">Broadcast</data>
             <data key="nbRepeat">1</data>
             <data key="arguments">
                 <argument name="mO" value="MAX_O"/>
@@ -209,15 +232,6 @@
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
-        <edge source="BuildSS" sourceport="scaleSpace" target="DoG" targetport="scaleSpace">
-            <data key="edge_cons">3649536.0</data>
-            <data key="edge_delay">0</data>
-            <data key="edge_prod">3649536.0</data>
-            <data key="data_type">float</data>
-            <data key="source_port_modifier"/>
-            <data key="target_port_modifier"/>
-            <data key="Weight"/>
-        </edge>
         <edge source="octavesW" sourceport="out3" target="DoG" targetport="octavesW">
             <data key="edge_cons">6.0</data>
             <data key="edge_delay">0</data>
@@ -259,6 +273,62 @@
             <data key="edge_delay">0</data>
             <data key="edge_prod">6.0</data>
             <data key="data_type">int</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="Extreme" sourceport="keyPointList"
+            target="Orientation" targetport="keyPointList">
+            <data key="edge_cons">1.0</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1.0</data>
+            <data key="data_type">KeyPointListSize</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="octavesW" sourceport="out5" target="Orientation" targetport="octavesW">
+            <data key="edge_cons">6.0</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">6.0</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="sigmas" sourceport="out2" target="Orientation" targetport="sigmas">
+            <data key="edge_cons">36.0</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">36.0</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS" sourceport="scaleSpace"
+            target="scaleSpace" targetport="in">
+            <data key="edge_cons">3649536.0</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3649536.0</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="scaleSpace" sourceport="out1" target="DoG" targetport="scaleSpace">
+            <data key="edge_cons">3649536.0</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3649536.0</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="scaleSpace" sourceport="out2" target="Orientation" targetport="scaleSpace">
+            <data key="edge_cons">3649536.0</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3649536.0</data>
+            <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
