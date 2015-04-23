@@ -262,6 +262,19 @@
             </loop>
             <port annotation="NONE" expr="3041280" kind="input" name="DoG"/>
         </node>
+        <node id="keyPoint1" kind="broadcast">
+            <port annotation="NONE" expr="1" kind="input" name="in"/>
+            <port annotation="NONE" expr="1" kind="output" name="out1"/>
+            <port annotation="NONE" expr="1" kind="output" name="out2"/>
+        </node>
+        <node id="Test_Extrem" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/Tests.h</data>
+            <loop name="Test_Extrem">
+                <param direction="IN" isConfig="false"
+                    name="KeyPointList" type="pointList* "/>
+            </loop>
+            <port annotation="NONE" expr="1" kind="input" name="KeyPointList"/>
+        </node>
         <edge kind="fifo" source="Init" sourceport="octavesW_g"
             target="octavesW" targetport="in" type="int"/>
         <edge kind="fifo" source="Init" sourceport="octavesH_g"
@@ -286,8 +299,6 @@
             target="Extreme" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out4"
             target="Extreme" targetport="octavesH" type="int"/>
-        <edge kind="fifo" source="Extreme" sourceport="keyPointList"
-            target="Orientation" targetport="keyPointList" type="pointList"/>
         <edge kind="fifo" source="octavesW" sourceport="out5"
             target="Orientation" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="sigmas" sourceport="out2"
@@ -333,6 +344,12 @@
             target="Test_OB" targetport="octaves" type="uchar"/>
         <edge kind="fifo" source="dog" sourceport="out2"
             target="Test_DoG" targetport="DoG" type="float"/>
+        <edge kind="fifo" source="Extreme" sourceport="keyPointList"
+            target="keyPoint1" targetport="in" type="pointList"/>
+        <edge kind="fifo" source="keyPoint1" sourceport="out1"
+            target="Orientation" targetport="keyPointList" type="pointList"/>
+        <edge kind="fifo" source="keyPoint1" sourceport="out2"
+            target="Test_Extrem" targetport="KeyPointList" type="pointList"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
