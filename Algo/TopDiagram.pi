@@ -180,6 +180,8 @@
                 kind="output" name="out1"/>
             <port annotation="NONE" expr="mO*mS*xsize*ysize"
                 kind="output" name="out2"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+                kind="output" name="out3"/>
         </node>
         <node id="Render" kind="actor">
             <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
@@ -229,8 +231,37 @@
             <port annotation="NONE" expr="w*h" kind="input" name="g"/>
             <port annotation="NONE" expr="w*h" kind="input" name="b"/>
         </node>
-        <edge kind="fifo" source="BuildOB" sourceport="octaves"
-            target="BuildSS" targetport="octaves" type="uchar"/>
+        <node id="Test_SS" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/Tests.h</data>
+            <loop name="Test_SS">
+                <param direction="IN" isConfig="false" name="scaleSpace" type="float* "/>
+            </loop>
+            <port annotation="NONE" expr="3649536" kind="input" name="scaleSpace"/>
+        </node>
+        <node id="octaves" kind="broadcast">
+            <port annotation="NONE" expr="608256" kind="input" name="in"/>
+            <port annotation="NONE" expr="608256" kind="output" name="out1"/>
+            <port annotation="NONE" expr="608256" kind="output" name="out2"/>
+        </node>
+        <node id="dog" kind="broadcast">
+            <port annotation="NONE" expr="3041280" kind="input" name="in"/>
+            <port annotation="NONE" expr="3041280" kind="output" name="out1"/>
+            <port annotation="NONE" expr="3041280" kind="output" name="out2"/>
+        </node>
+        <node id="Test_OB" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/Tests.h</data>
+            <loop name="Test_OB">
+                <param direction="IN" isConfig="false" name="octaves" type="unsigned char* "/>
+            </loop>
+            <port annotation="NONE" expr="608256" kind="input" name="octaves"/>
+        </node>
+        <node id="Test_DoG" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/Tests.h</data>
+            <loop name="Test_DoG">
+                <param direction="IN" isConfig="false" name="DoG" type="float* "/>
+            </loop>
+            <port annotation="NONE" expr="3041280" kind="input" name="DoG"/>
+        </node>
         <edge kind="fifo" source="Init" sourceport="octavesW_g"
             target="octavesW" targetport="in" type="int"/>
         <edge kind="fifo" source="Init" sourceport="octavesH_g"
@@ -251,8 +282,6 @@
             target="DoG" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out3"
             target="DoG" targetport="octavesH" type="int"/>
-        <edge kind="fifo" source="DoG" sourceport="dog" target="Extreme"
-            targetport="dog" type="float"/>
         <edge kind="fifo" source="octavesW" sourceport="out4"
             target="Extreme" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out4"
@@ -290,6 +319,20 @@
             target="WritePGM" targetport="g" type="uchar"/>
         <edge kind="fifo" source="Render" sourceport="b"
             target="WritePGM" targetport="b" type="uchar"/>
+        <edge kind="fifo" source="scaleSpace" sourceport="out3"
+            target="Test_SS" targetport="scaleSpace" type="float"/>
+        <edge kind="fifo" source="BuildOB" sourceport="octaves"
+            target="octaves" targetport="in" type="uchar"/>
+        <edge kind="fifo" source="octaves" sourceport="out1"
+            target="BuildSS" targetport="octaves" type="uchar"/>
+        <edge kind="fifo" source="DoG" sourceport="dog" target="dog"
+            targetport="in" type="float"/>
+        <edge kind="fifo" source="dog" sourceport="out1"
+            target="Extreme" targetport="dog" type="float"/>
+        <edge kind="fifo" source="octaves" sourceport="out2"
+            target="Test_OB" targetport="octaves" type="uchar"/>
+        <edge kind="fifo" source="dog" sourceport="out2"
+            target="Test_DoG" targetport="DoG" type="float"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>

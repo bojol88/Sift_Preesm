@@ -10,7 +10,7 @@
  * Flags
  ***************************************/
 // print information
-#define VERBOSE 1
+//#define VERBOSE 1
 
 /****************************************
  * Global Definitions

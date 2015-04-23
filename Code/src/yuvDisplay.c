@@ -37,7 +37,7 @@ YuvDisplay display = { INIT_OVERLAY, NULL, 0, 0 };
 * @param xsize width
 * @param ysize heigth
 */
-void yuvDisplayInit (int id, int xsize, int ysize)
+void yuvDisplayInit (int xsize, int ysize)
 {
 
     if(display.initialized==0)
@@ -47,11 +47,11 @@ void yuvDisplayInit (int id, int xsize, int ysize)
 
     if(ysize > DISPLAY_H)
     {
-        fprintf(stderr, "SDL screen is not high enough for display %d.", id);
+        fprintf(stderr, "SDL screen is not high enough for display %d.", 0);
         system("PAUSE");
         exit(1);
     }
-    else if(id >= NB_DISPLAY)
+    else if(0 >= NB_DISPLAY)
     {
         fprintf(stderr, "The number of displays is limited to %d.", NB_DISPLAY);
         system("PAUSE");
@@ -91,15 +91,15 @@ void yuvDisplayInit (int id, int xsize, int ysize)
         }
     }
 
-    if(display.overlays[id] == NULL)
+    if(display.overlays[0] == NULL)
     {
 
-        display.overlays[id] = SDL_CreateYUVOverlay(xsize, ysize,
+        display.overlays[0] = SDL_CreateYUVOverlay(xsize, ysize,
                                SDL_IYUV_OVERLAY, display.screen);
 
-        memset(display.overlays[id]->pixels[0], 0, xsize*ysize);
-        memset(display.overlays[id]->pixels[1], 0, xsize*ysize/4);
-        memset(display.overlays[id]->pixels[2], 0, xsize*ysize/4);
+        memset(display.overlays[0]->pixels[0], 0, xsize*ysize);
+        memset(display.overlays[0]->pixels[1], 0, xsize*ysize/4);
+        memset(display.overlays[0]->pixels[2], 0, xsize*ysize/4);
         display.currentXMin += xsize;
     }
 
@@ -112,11 +112,11 @@ void yuvDisplayInit (int id, int xsize, int ysize)
 * @param u chroma U
 * @param v chroma V
 */
-void yuvDisplay(int id, unsigned char *y, unsigned char *u, unsigned char *v)
+void yuvDisplay( unsigned char *y)
 {
 
-    SDL_Overlay* overlay = display.overlays[id];
-    SDL_Rect video_rect = {overlay->w*id,0,overlay->w, overlay->h};	// SDL frame position and size (x, y, w, h)
+    SDL_Overlay* overlay = display.overlays[0];
+    SDL_Rect video_rect = {overlay->w*0,0,overlay->w, overlay->h};	// SDL frame position and size (x, y, w, h)
     int ySize = video_rect.w * video_rect.h;
 
     //SDL_LockYUVOverlay(overlay);
@@ -126,24 +126,22 @@ void yuvDisplay(int id, unsigned char *y, unsigned char *u, unsigned char *v)
         system("PAUSE");
     }
     memcpy(overlay->pixels[0], y, ySize);
-    memcpy(overlay->pixels[1], u, ySize/4);
-    memcpy(overlay->pixels[2], v, ySize/4);
 
     SDL_UnlockYUVOverlay(overlay);
 
-    yuvRefreshDisplay(id);
+    yuvRefreshDisplay();
 }
-void yuvRefreshDisplay(int id)
+void yuvRefreshDisplay()
 {
     SDL_Event event;
     SDL_Rect video_rect;
 
-        video_rect.x = display.overlays[id]->w*id;
+        video_rect.x = display.overlays[0]->w*0;
         video_rect.y = 0;
-        video_rect.w = display.overlays[id]->w;
-        video_rect.h = display.overlays[id]->h;
+        video_rect.w = display.overlays[0]->w;
+        video_rect.h = display.overlays[0]->h;
 
-        SDL_DisplayYUVOverlay(display.overlays[id], &video_rect);
+        SDL_DisplayYUVOverlay(display.overlays[0], &video_rect);
 
     /* Grab all the events off the queue. */
     while (SDL_PollEvent(&event))
@@ -159,7 +157,7 @@ void yuvRefreshDisplay(int id)
     }
 }
 
-void yuvFinalize(int id)
+void yuvFinalize()
 {
-    SDL_FreeYUVOverlay(display.overlays[id]);
+    SDL_FreeYUVOverlay(display.overlays[0]);
 }

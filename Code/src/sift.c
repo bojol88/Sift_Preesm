@@ -1,5 +1,6 @@
 #include "sift.h"
 #include "img_io.h"
+#include "Tests.h"
 
 #undef DUMP_OCTAVE
 #undef DUMP_SCALESPACE

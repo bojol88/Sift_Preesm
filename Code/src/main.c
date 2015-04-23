@@ -12,7 +12,7 @@
 
 
 #include "x86.h"
-
+#include "sift.h"
 
 pthread_barrier_t iter_barrier;
 int stopThreads;

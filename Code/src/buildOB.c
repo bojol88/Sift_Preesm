@@ -24,7 +24,14 @@ void buildOB(unsigned char* img,
              int* octavesW, int* octavesH){
 
     // common variables
-    int i;
+    int i,j;
+	for (i = 1; i < NUMBER_OF_OCTAVES; i++)
+	{
+		for (j = 1; j < NUMBER_OF_SCALES; j++)
+		{
+			octaves[i*MAX_OCTAVE_SIZE + j] = 0;
+		}
+	}
 
     // octave 0 is the original image
     memcpy(&octaves[0], img,

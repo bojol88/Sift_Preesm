@@ -30,7 +30,7 @@
 * @param v
 *        the V component of the frame to display
 */
-void yuvDisplay(int id, unsigned char *y, unsigned char *u, unsigned char *v);
+void yuvDisplay( unsigned char *y);
 
 /**
 * Initialize a new display with a parameterizable resolution and open a
@@ -50,7 +50,7 @@ void yuvDisplay(int id, unsigned char *y, unsigned char *u, unsigned char *v);
 * @param ysize
 *        the height of the initialized display
 */
-void yuvDisplayInit (int id, int xsize, int ysize);
+void yuvDisplayInit (int xsize, int ysize);
 
 /**
 * Function used to free a display
@@ -58,7 +58,7 @@ void yuvDisplayInit (int id, int xsize, int ysize);
 * @param id
 *        the id of the freed display
 */
-void yuvFinalize(int id);
+void yuvFinalize();
 
 /**
 * Function used to refresh the display with the given id in the windo.
@@ -66,6 +66,6 @@ void yuvFinalize(int id);
 * @param id
 *        the id of the refreshed display.
 */
-void yuvRefreshDisplay(int id);
+void yuvRefreshDisplay();
 
 #endif
