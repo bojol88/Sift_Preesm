@@ -5,7 +5,12 @@
 
 #include "img_io.h"
 
-static int Num = 1;
+
+// Normal value of Num is 1
+// The value is changed because of the pipeline
+// New value = 1 minus number of pipeline stage
+static int Num = -2; 
+
 
 unsigned char*
 read_pgm(int* w, int* h, const char * filename){
@@ -70,24 +75,27 @@ write_pgm(unsigned char* data, int w, int h, const char* filename){
 
 void
 write_ppm(unsigned char* r, unsigned char* g, unsigned char* b, int w, int h) {
-    FILE * out_file;
+	FILE * out_file;
     int i;
 	char filename[256];
     unsigned char* obuf = (unsigned char*)malloc(3*w*h*sizeof(unsigned char));
 
-    for(i = 0; i < w*h; i ++){
-        obuf[3*i + 0] = r[i];
-        obuf[3*i + 1] = g[i];
-        obuf[3*i + 2] = b[i];
-    }
-	sprintf(filename, "Resultats/%d.pgm", Num);
-	printf("%d ", Num);
+	if (Num >= 1)
+	{
+		for (i = 0; i < w*h; i++){
+			obuf[3 * i + 0] = r[i];
+			obuf[3 * i + 1] = g[i];
+			obuf[3 * i + 2] = b[i];
+		}
+		sprintf(filename, "Resultats/%d.pgm", Num);
+		printf("%d ", Num);
+		out_file = fopen(filename, "wb");
+		fprintf(out_file, "P6\n");
+		fprintf(out_file, "%d %d\n255\n", w, h);
+		fwrite(obuf, sizeof(unsigned char), 3 * w*h, out_file);
+		fclose(out_file);
+	}
 	Num++;
-    out_file = fopen(filename, "wb");
-    fprintf(out_file, "P6\n");
-    fprintf(out_file, "%d %d\n255\n", w, h);
-    fwrite(obuf,sizeof(unsigned char), 3*w*h, out_file);
-    fclose(out_file);
     free(obuf);
 }// write_ppm()
 

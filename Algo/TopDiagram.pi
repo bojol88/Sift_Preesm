@@ -5,6 +5,7 @@
     <key attr.name="arguments" for="node" id="arguments"/>
     <key attr.name="name" attr.type="string" for="graph"/>
     <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <key attr.name="delay" attr.type="string" for="edge"/>
     <graph edgedefault="directed">
         <data key="name">TopDiagram</data>
         <node expr="352" id="xsize" kind="param"/>
@@ -229,12 +230,18 @@
             <port annotation="NONE" expr="w*h" kind="input" name="g"/>
             <port annotation="NONE" expr="w*h" kind="input" name="b"/>
         </node>
-        <edge kind="fifo" source="Init" sourceport="octavesW_g"
-            target="octavesW" targetport="in" type="int"/>
-        <edge kind="fifo" source="Init" sourceport="octavesH_g"
-            target="octavesH" targetport="in" type="int"/>
-        <edge kind="fifo" source="Init" sourceport="sigmas"
-            target="sigmas" targetport="in" type="float"/>
+        <edge expr="6" kind="fifo" source="Init" sourceport="octavesW_g"
+            target="octavesW" targetport="in" type="int">
+            <data key="delay"/>
+        </edge>
+        <edge expr="6" kind="fifo" source="Init" sourceport="octavesH_g"
+            target="octavesH" targetport="in" type="int">
+            <data key="delay"/>
+        </edge>
+        <edge expr="36" kind="fifo" source="Init" sourceport="sigmas"
+            target="sigmas" targetport="in" type="float">
+            <data key="delay"/>
+        </edge>
         <edge kind="fifo" source="octavesW" sourceport="out1"
             target="BuildOB" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesW" sourceport="out2"
@@ -263,27 +270,45 @@
             target="DoG" targetport="scaleSpace" type="float"/>
         <edge kind="fifo" source="scaleSpace" sourceport="out2"
             target="Orientation" targetport="scaleSpace" type="float"/>
-        <edge kind="fifo" source="ReadYUV" sourceport="y" target="Img"
-            targetport="in" type="uchar"/>
+        <edge expr="101376" kind="fifo" source="ReadYUV" sourceport="y"
+            target="Img" targetport="in" type="uchar">
+            <data key="delay"/>
+        </edge>
         <edge kind="fifo" source="Img" sourceport="out1"
             target="BuildOB" targetport="img" type="uchar"/>
-        <edge kind="fifo" source="Img" sourceport="out2" target="Render"
-            targetport="img" type="uchar"/>
-        <edge kind="fifo" source="octavesW" sourceport="out6"
-            target="Render" targetport="octavesW" type="int"/>
-        <edge kind="fifo" source="octavesH" sourceport="out5"
-            target="Render" targetport="octavesH" type="int"/>
-        <edge kind="fifo" source="sigmas" sourceport="out3"
-            target="Render" targetport="sigmas" type="float"/>
-        <edge kind="fifo" source="Orientation"
+        <edge expr="101376" kind="fifo" source="Img" sourceport="out2"
+            target="Render" targetport="img" type="uchar">
+            <data key="delay"/>
+        </edge>
+        <edge expr="6" kind="fifo" source="octavesW" sourceport="out6"
+            target="Render" targetport="octavesW" type="int">
+            <data key="delay"/>
+        </edge>
+        <edge expr="6" kind="fifo" source="octavesH" sourceport="out5"
+            target="Render" targetport="octavesH" type="int">
+            <data key="delay"/>
+        </edge>
+        <edge expr="36" kind="fifo" source="sigmas" sourceport="out3"
+            target="Render" targetport="sigmas" type="float">
+            <data key="delay"/>
+        </edge>
+        <edge expr="1" kind="fifo" source="Orientation"
             sourceport="keyPointListCP" target="Render"
-            targetport="keyPointList" type="pointList"/>
-        <edge kind="fifo" source="Render" sourceport="r"
-            target="WritePGM" targetport="r" type="uchar"/>
-        <edge kind="fifo" source="Render" sourceport="g"
-            target="WritePGM" targetport="g" type="uchar"/>
-        <edge kind="fifo" source="Render" sourceport="b"
-            target="WritePGM" targetport="b" type="uchar"/>
+            targetport="keyPointList" type="pointList">
+            <data key="delay"/>
+        </edge>
+        <edge expr="101376" kind="fifo" source="Render" sourceport="r"
+            target="WritePGM" targetport="r" type="uchar">
+            <data key="delay"/>
+        </edge>
+        <edge expr="101376" kind="fifo" source="Render" sourceport="g"
+            target="WritePGM" targetport="g" type="uchar">
+            <data key="delay"/>
+        </edge>
+        <edge expr="101376" kind="fifo" source="Render" sourceport="b"
+            target="WritePGM" targetport="b" type="uchar">
+            <data key="delay"/>
+        </edge>
         <edge kind="fifo" source="BuildOB" sourceport="octaves"
             target="BuildSS" targetport="octaves" type="uchar"/>
         <edge kind="fifo" source="DoG" sourceport="dog" target="Extreme"
