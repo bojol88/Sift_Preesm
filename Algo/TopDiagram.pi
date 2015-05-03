@@ -270,8 +270,11 @@
         </edge>
         <edge kind="fifo" source="scaleSpace" sourceport="out1"
             target="DoG" targetport="scaleSpace" type="float"/>
-        <edge kind="fifo" source="scaleSpace" sourceport="out2"
-            target="Orientation" targetport="scaleSpace" type="float"/>
+        <edge expr="3649536*2" kind="fifo" source="scaleSpace"
+            sourceport="out2" target="Orientation"
+            targetport="scaleSpace" type="float">
+            <data key="delay"/>
+        </edge>
         <edge expr="101376" kind="fifo" source="ReadYUV" sourceport="y"
             target="Img" targetport="in" type="uchar">
             <data key="delay"/>
@@ -280,7 +283,7 @@
             target="BuildOB" targetport="img" type="uchar">
             <data key="delay"/>
         </edge>
-        <edge expr="101376*4" kind="fifo" source="Img" sourceport="out2"
+        <edge expr="101376*6" kind="fifo" source="Img" sourceport="out2"
             target="Render" targetport="img" type="uchar">
             <data key="delay"/>
         </edge>
@@ -317,10 +320,15 @@
             sourceport="octaves" target="BuildSS" targetport="octaves" type="uchar">
             <data key="delay"/>
         </edge>
-        <edge kind="fifo" source="DoG" sourceport="dog" target="Extreme"
-            targetport="dog" type="float"/>
-        <edge kind="fifo" source="Extreme" sourceport="keyPointList"
-            target="Orientation" targetport="keyPointList" type="pointList"/>
+        <edge expr="3041280" kind="fifo" source="DoG" sourceport="dog"
+            target="Extreme" targetport="dog" type="float">
+            <data key="delay"/>
+        </edge>
+        <edge expr="1" kind="fifo" source="Extreme"
+            sourceport="keyPointList" target="Orientation"
+            targetport="keyPointList" type="pointList">
+            <data key="delay"/>
+        </edge>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>
