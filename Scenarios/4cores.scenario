@@ -7,81 +7,58 @@
     </files>
     <constraints excelUrl="">
         <constraintGroup>
-            <operator name="Core1"/>
-            <task name="TopDiagram/BuildOB"/>
-            <task name="TopDiagram/octavesH"/>
-            <task name="TopDiagram/Render"/>
-            <task name="TopDiagram/Orientation"/>
-            <task name="TopDiagram"/>
-            <task name="TopDiagram/BuildSS"/>
-            <task name="TopDiagram/Init"/>
-            <task name="TopDiagram/Img"/>
-            <task name="TopDiagram/octavesW"/>
+            <operator name="Core0"/>
             <task name="TopDiagram/WritePGM"/>
-            <task name="TopDiagram/scaleSpace"/>
+            <task name="TopDiagram/Render"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram/Orientation"/>
             <task name="TopDiagram/Extreme"/>
-            <task name="TopDiagram/sigmas"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/ReadYUV"/>
+            <task name="TopDiagram/DoG"/>
+        </constraintGroup>
+        <constraintGroup>
+            <operator name="Core1"/>
+            <task name="TopDiagram/WritePGM"/>
+            <task name="TopDiagram/Render"/>
+            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram/Orientation"/>
+            <task name="TopDiagram/Extreme"/>
+            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/BuildSS"/>
             <task name="TopDiagram/ReadYUV"/>
             <task name="TopDiagram/DoG"/>
         </constraintGroup>
         <constraintGroup>
             <operator name="Core3"/>
-            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram/scaleSpace"/>
             <task name="TopDiagram/octavesH"/>
-            <task name="TopDiagram/Render"/>
-            <task name="TopDiagram/Orientation"/>
-            <task name="TopDiagram"/>
-            <task name="TopDiagram/BuildSS"/>
-            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/Img"/>
             <task name="TopDiagram/octavesW"/>
-            <task name="TopDiagram/WritePGM"/>
-            <task name="TopDiagram/scaleSpace"/>
-            <task name="TopDiagram/Extreme"/>
-            <task name="TopDiagram/sigmas"/>
-            <task name="TopDiagram/ReadYUV"/>
-            <task name="TopDiagram/DoG"/>
         </constraintGroup>
         <constraintGroup>
             <operator name="Core2"/>
-            <task name="TopDiagram/BuildOB"/>
+            <task name="TopDiagram/scaleSpace"/>
             <task name="TopDiagram/octavesH"/>
-            <task name="TopDiagram/Render"/>
-            <task name="TopDiagram/Orientation"/>
-            <task name="TopDiagram"/>
-            <task name="TopDiagram/BuildSS"/>
-            <task name="TopDiagram/Init"/>
+            <task name="TopDiagram/sigmas"/>
             <task name="TopDiagram/Img"/>
             <task name="TopDiagram/octavesW"/>
-            <task name="TopDiagram/WritePGM"/>
-            <task name="TopDiagram/scaleSpace"/>
-            <task name="TopDiagram/Extreme"/>
-            <task name="TopDiagram/sigmas"/>
-            <task name="TopDiagram/ReadYUV"/>
-            <task name="TopDiagram/DoG"/>
-        </constraintGroup>
-        <constraintGroup>
-            <operator name="Core0"/>
-            <task name="TopDiagram/BuildOB"/>
-            <task name="TopDiagram/octavesH"/>
-            <task name="TopDiagram/Render"/>
-            <task name="TopDiagram/Orientation"/>
-            <task name="TopDiagram"/>
-            <task name="TopDiagram/BuildSS"/>
-            <task name="TopDiagram/Init"/>
-            <task name="TopDiagram/Img"/>
-            <task name="TopDiagram/octavesW"/>
-            <task name="TopDiagram/WritePGM"/>
-            <task name="TopDiagram/scaleSpace"/>
-            <task name="TopDiagram/Extreme"/>
-            <task name="TopDiagram/sigmas"/>
-            <task name="TopDiagram/ReadYUV"/>
-            <task name="TopDiagram/DoG"/>
         </constraintGroup>
     </constraints>
     <relativeconstraints excelUrl=""/>
     <timings excelUrl="">
-        <memcpyspeed opname="x86" setuptime="1" timeperunit="1.0"/>
+        <timing opname="x86" time="185" vertexname="BuildOB"/>
+        <timing opname="x86" time="109685" vertexname="BuildSS"/>
+        <timing opname="x86" time="3820" vertexname="DoG"/>
+        <timing opname="x86" time="3085" vertexname="Extreme"/>
+        <timing opname="x86" time="3" vertexname="Init"/>
+        <timing opname="x86" time="185" vertexname="Orientation"/>
+        <timing opname="x86" time="225" vertexname="ReadYUV"/>
+        <timing opname="x86" time="1640" vertexname="Render"/>
+        <timing opname="x86" time="10015" vertexname="WritePGM"/>
+        <memcpyspeed opname="x86" setuptime="1" timeperunit="3.3333334E-5"/>
     </timings>
     <simuParams>
         <mainCore>Core0</mainCore>
