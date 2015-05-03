@@ -80,8 +80,7 @@ void buildOB(unsigned char* img,
 
 void buildSS(unsigned char* octaves,
 			 float* scaleSpace,
-             int* octavesW, int* octavesH,
-             float* sigmas);
+			 int xsize, int ysize);
 
 void DoG(float* dog,
 		 float* scaleSpace,

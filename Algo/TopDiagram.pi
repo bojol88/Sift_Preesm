@@ -68,18 +68,14 @@
                 <param direction="IN" isConfig="false" name="octaves" type="unsigned char* "/>
                 <param direction="OUT" isConfig="false"
                     name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9;&#x9; float* "/>
-                <param direction="IN" isConfig="false" name="octavesW" type="&#xd;&#xa;             int* "/>
-                <param direction="IN" isConfig="false" name="octavesH" type=" int* "/>
-                <param direction="IN" isConfig="false" name="sigmas" type="&#xd;&#xa;             float* "/>
+                <param direction="IN" isConfig="true" name="xsize" type="&#xd;&#xa;&#x9;&#x9;&#x9; int "/>
+                <param direction="IN" isConfig="true" name="ysize" type=" int "/>
             </loop>
             <port kind="cfg_input" name="xsize"/>
             <port kind="cfg_input" name="ysize"/>
             <port kind="cfg_input" name="mO"/>
             <port kind="cfg_input" name="mS"/>
             <port annotation="NONE" expr="mO*xsize*ysize" kind="input" name="octaves"/>
-            <port annotation="NONE" expr="mO" kind="input" name="octavesW"/>
-            <port annotation="NONE" expr="mO" kind="input" name="octavesH"/>
-            <port annotation="NONE" expr="mO*mS" kind="input" name="sigmas"/>
             <port annotation="NONE" expr="mO*mS*xsize*ysize"
                 kind="output" name="scaleSpace"/>
         </node>
@@ -87,7 +83,6 @@
             <port kind="cfg_input" name="mO"/>
             <port annotation="NONE" expr="mO" kind="input" name="in"/>
             <port annotation="NONE" expr="mO" kind="output" name="out1"/>
-            <port annotation="NONE" expr="mO" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
             <port annotation="NONE" expr="mO" kind="output" name="out4"/>
             <port annotation="NONE" expr="mO" kind="output" name="out5"/>
@@ -97,7 +92,6 @@
             <port kind="cfg_input" name="mO"/>
             <port annotation="NONE" expr="mO" kind="input" name="in"/>
             <port annotation="NONE" expr="mO" kind="output" name="out1"/>
-            <port annotation="NONE" expr="mO" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO" kind="output" name="out3"/>
             <port annotation="NONE" expr="mO" kind="output" name="out4"/>
             <port annotation="NONE" expr="mO" kind="output" name="out5"/>
@@ -106,7 +100,6 @@
             <port kind="cfg_input" name="mO"/>
             <port kind="cfg_input" name="mS"/>
             <port annotation="NONE" expr="mO*mS" kind="input" name="in"/>
-            <port annotation="NONE" expr="mO*mS" kind="output" name="out1"/>
             <port annotation="NONE" expr="mO*mS" kind="output" name="out2"/>
             <port annotation="NONE" expr="mO*mS" kind="output" name="out3"/>
         </node>
@@ -244,14 +237,8 @@
         </edge>
         <edge kind="fifo" source="octavesW" sourceport="out1"
             target="BuildOB" targetport="octavesW" type="int"/>
-        <edge kind="fifo" source="octavesW" sourceport="out2"
-            target="BuildSS" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out1"
             target="BuildOB" targetport="octavesH" type="int"/>
-        <edge kind="fifo" source="octavesH" sourceport="out2"
-            target="BuildSS" targetport="octavesH" type="int"/>
-        <edge kind="fifo" source="sigmas" sourceport="out1"
-            target="BuildSS" targetport="sigmas" type="float"/>
         <edge kind="fifo" source="octavesW" sourceport="out3"
             target="DoG" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="octavesH" sourceport="out3"

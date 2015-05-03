@@ -23,11 +23,37 @@ void g2d(float* target,
 
 void buildSS(unsigned char octaves[MAX_O*MAX_OCTAVE_SIZE],
 			 float scaleSpace[MAX_O*MAX_S*MAX_OCTAVE_SIZE],
-             int* octavesW, int* octavesH, 
-             float sigmas[MAX_O*MAX_S]){
+			 int xsize, int ysize){
 
     // common variables
     int i, j;
+	// width of each octave
+	int octavesW[MAX_O];
+	// height of each octave
+	int octavesH[MAX_O];
+
+	float sigmas[MAX_O*MAX_S];
+
+	// computing the width of octaves at each level
+	octavesW[0] = xsize;
+	for (i = 1; i < NUMBER_OF_OCTAVES; i++){
+		octavesW[i] = octavesW[i - 1] / 2;
+	}
+	// computing the height of octaves at each level
+	octavesH[0] = ysize;
+	for (i = 1; i < NUMBER_OF_OCTAVES; i++){
+		octavesH[i] = octavesH[i - 1] / 2;
+	}
+	float sigma0 = 1.6f;
+
+
+	// gaussian sigmas at each scale
+	for (i = 0; i < NUMBER_OF_OCTAVES; i++){
+		for (j = 0; j < NUMBER_OF_SCALES; j++){
+			sigmas[i*MAX_S + j] = sigma0 * pow(sqrt(2.0f), (float)j / (float)(NUMBER_OF_SCALES - 3));
+		}
+	}
+
     for(i = 0; i < NUMBER_OF_OCTAVES; i++){
         for(j = 0; j < NUMBER_OF_SCALES; j++){
             // 2D Gaussian
