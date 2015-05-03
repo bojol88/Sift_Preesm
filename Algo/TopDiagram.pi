@@ -264,8 +264,10 @@
             target="Orientation" targetport="octavesW" type="int"/>
         <edge kind="fifo" source="sigmas" sourceport="out2"
             target="Orientation" targetport="sigmas" type="float"/>
-        <edge kind="fifo" source="BuildSS" sourceport="scaleSpace"
-            target="scaleSpace" targetport="in" type="float"/>
+        <edge expr="3649536" kind="fifo" source="BuildSS"
+            sourceport="scaleSpace" target="scaleSpace" targetport="in" type="float">
+            <data key="delay"/>
+        </edge>
         <edge kind="fifo" source="scaleSpace" sourceport="out1"
             target="DoG" targetport="scaleSpace" type="float"/>
         <edge kind="fifo" source="scaleSpace" sourceport="out2"
@@ -274,9 +276,11 @@
             target="Img" targetport="in" type="uchar">
             <data key="delay"/>
         </edge>
-        <edge kind="fifo" source="Img" sourceport="out1"
-            target="BuildOB" targetport="img" type="uchar"/>
-        <edge expr="101376" kind="fifo" source="Img" sourceport="out2"
+        <edge expr="101376" kind="fifo" source="Img" sourceport="out1"
+            target="BuildOB" targetport="img" type="uchar">
+            <data key="delay"/>
+        </edge>
+        <edge expr="101376*4" kind="fifo" source="Img" sourceport="out2"
             target="Render" targetport="img" type="uchar">
             <data key="delay"/>
         </edge>
@@ -309,8 +313,10 @@
             target="WritePGM" targetport="b" type="uchar">
             <data key="delay"/>
         </edge>
-        <edge kind="fifo" source="BuildOB" sourceport="octaves"
-            target="BuildSS" targetport="octaves" type="uchar"/>
+        <edge expr="608256" kind="fifo" source="BuildOB"
+            sourceport="octaves" target="BuildSS" targetport="octaves" type="uchar">
+            <data key="delay"/>
+        </edge>
         <edge kind="fifo" source="DoG" sourceport="dog" target="Extreme"
             targetport="dog" type="float"/>
         <edge kind="fifo" source="Extreme" sourceport="keyPointList"

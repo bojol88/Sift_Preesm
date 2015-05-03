@@ -9,7 +9,7 @@
 // Normal value of Num is 1
 // The value is changed because of the pipeline
 // New value = 1 minus number of pipeline stage
-static int Num = -2; 
+static int Num = -5; 
 
 
 unsigned char*
