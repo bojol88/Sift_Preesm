@@ -56,7 +56,7 @@ void initReadYUV(int xSize, int ySize) {
 #endif
 
     // Set initial clock
-    //startTiming(0);
+    startTiming(0);
 }
 
 /*========================================================================
@@ -69,12 +69,11 @@ void readYUV(int xSize, int ySize, unsigned char *y) {
 	unsigned char* u = (unsigned char*)malloc(xSize * ySize * sizeof(unsigned char));
 	unsigned char* v = (unsigned char*)malloc(xSize * ySize * sizeof(unsigned char));
 	
-	/*	unsigned int time = 0;
-		rewind(ptfile);
-		time = stopTiming(0);
-		printf("  Main: %d frames in %d us - %f fps\n", NB_FRAME - 1, time, (NB_FRAME - 1.0) / (float)time * 1000000);
-		startTiming(0);
-	*/
+	unsigned int time = 0;
+	time = stopTiming(0);
+	printf("  Main: %d frames in %d us - %f fps\n", NB_FRAME - 1, time, (NB_FRAME - 1.0) / (float)time * 1000000);
+	startTiming(0);
+	
     fread(y, sizeof(char), xSize * ySize, ptfile);
     fread(u, sizeof(char), xSize * ySize / 4, ptfile);
     fread(v, sizeof(char), xSize * ySize / 4, ptfile);
