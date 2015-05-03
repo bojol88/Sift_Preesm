@@ -16,6 +16,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <pthread.h>
+#include "sift.h"
 #else
 // For Linux
 // Pthread barriers are defined in POSIX 2001 version

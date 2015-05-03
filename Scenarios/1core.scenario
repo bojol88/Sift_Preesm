@@ -9,15 +9,15 @@
         <constraintGroup>
             <operator name="Core0"/>
             <task name="TopDiagram/Test_DoG"/>
-            <task name="TopDiagram/BuildOB"/>
-            <task name="TopDiagram/Orientation"/>
-            <task name="TopDiagram/octavesH"/>
             <task name="TopDiagram/Render"/>
-            <task name="TopDiagram/keyPoint1"/>
+            <task name="TopDiagram/octavesH"/>
+            <task name="TopDiagram/Orientation"/>
+            <task name="TopDiagram/BuildOB"/>
             <task name="TopDiagram"/>
+            <task name="TopDiagram/keyPoint1"/>
             <task name="TopDiagram/Test_OB"/>
-            <task name="TopDiagram/Init"/>
             <task name="TopDiagram/BuildSS"/>
+            <task name="TopDiagram/Init"/>
             <task name="TopDiagram/Img"/>
             <task name="TopDiagram/octavesW"/>
             <task name="TopDiagram/dog"/>
@@ -34,7 +34,7 @@
     </constraints>
     <relativeconstraints excelUrl=""/>
     <timings excelUrl="">
-        <memcpyspeed opname="x86" setuptime="1" timeperunit="1.0"/>
+        <memcpyspeed opname="x86" setuptime="1" timeperunit="3.3333334E-5"/>
     </timings>
     <simuParams>
         <mainCore>Core0</mainCore>
