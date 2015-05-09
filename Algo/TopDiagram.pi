@@ -70,13 +70,15 @@
                     name="scaleSpace" type="&#xd;&#xa;&#x9;&#x9;&#x9; float* "/>
                 <param direction="IN" isConfig="true" name="xsize" type="&#xd;&#xa;&#x9;&#x9;&#x9; int "/>
                 <param direction="IN" isConfig="true" name="ysize" type=" int "/>
+                <param direction="IN" isConfig="false" name="Paral" type="&#xd;&#xa;&#x9;&#x9;&#x9; int * "/>
             </loop>
             <port kind="cfg_input" name="xsize"/>
             <port kind="cfg_input" name="ysize"/>
             <port kind="cfg_input" name="mO"/>
             <port kind="cfg_input" name="mS"/>
-            <port annotation="NONE" expr="mO*xsize*ysize" kind="input" name="octaves"/>
-            <port annotation="NONE" expr="mO*mS*xsize*ysize"
+            <port annotation="NONE" expr="mO*xsize*ysize/6" kind="input" name="octaves"/>
+            <port annotation="NONE" expr="1" kind="input" name="Paral"/>
+            <port annotation="NONE" expr="mO*mS*xsize*ysize/6"
                 kind="output" name="scaleSpace"/>
         </node>
         <node id="octavesW" kind="broadcast">
@@ -223,6 +225,13 @@
             <port annotation="NONE" expr="w*h" kind="input" name="g"/>
             <port annotation="NONE" expr="w*h" kind="input" name="b"/>
         </node>
+        <node id="ParalSS" kind="actor">
+            <data key="graph_desc">SiftPreesm/Code/include/sift.h</data>
+            <loop name="ParalSS">
+                <param direction="OUT" isConfig="false" name="Paral" type="int * "/>
+            </loop>
+            <port annotation="NONE" expr="6" kind="output" name="Paral"/>
+        </node>
         <edge expr="6" kind="fifo" source="Init" sourceport="octavesW_g"
             target="octavesW" targetport="in" type="int">
             <data key="delay"/>
@@ -316,6 +325,8 @@
             targetport="keyPointList" type="pointList">
             <data key="delay"/>
         </edge>
+        <edge kind="fifo" source="ParalSS" sourceport="Paral"
+            target="BuildSS" targetport="Paral" type="int"/>
         <edge kind="dependency" source="xsize" target="ReadYUV" targetport="xsize"/>
         <edge kind="dependency" source="ysize" target="ReadYUV" targetport="ysize"/>
         <edge kind="dependency" source="xsize" target="Init" targetport="xsize"/>

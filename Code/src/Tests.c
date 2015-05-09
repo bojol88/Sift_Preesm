@@ -6,22 +6,28 @@
 #include <assert.h>
 #include <math.h>
 
-static int k = 1, l = 1, m = 1, n = 1;
+static int k = -2, l = -3, m = 1, n = 1;
+// l is down to -3 because of the pipeline, is value is 1 minus the number of pipeline stage before him
+// The same for k
+
 
 void Test_OB(unsigned char* octaves)
 {
 	char filename[256];
 	sprintf(filename, "Tests/BuildOB/Resultats/%d.pgm", k);
+	write_pgm(octaves, 352, 6 * 288, filename);
 	k++;
-	write_pgm(octaves, 352, 6*288, filename);
 }
 
 void Test_SS(float* scaleSpace)
 {
-	char filename[256];
-	sprintf(filename, "Tests/BuildSS/Resultats/%d.pgm", l);
+	if (l>0)
+	{
+		char filename[256];
+		sprintf(filename, "Tests/BuildSS/Resultats/%d.pgm", l);
+		write_float_pgm(scaleSpace, 6*352, 6*288, filename,1);
+	}
 	l++;
-	write_float_pgm(scaleSpace, 6*352, 6*288, filename,1);
 }
 
 void Test_DoG(float* DoG)

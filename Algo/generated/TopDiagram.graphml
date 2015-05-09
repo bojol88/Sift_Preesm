@@ -26,7 +26,7 @@
             <variable name="MAX_S" value="6"/>
         </data>
         <node id="ReadYUV">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4def591b</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@3242e0fa</data>
             <data key="name">ReadYUV</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -36,7 +36,7 @@
             </data>
         </node>
         <node id="Init">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1cc32396</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@44c056dd</data>
             <data key="name">Init</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -48,7 +48,7 @@
             </data>
         </node>
         <node id="BuildOB">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4f555b9a</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@2f86ea6e</data>
             <data key="name">BuildOB</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -58,9 +58,69 @@
                 <argument name="xsize" value="xsize"/>
             </data>
         </node>
-        <node id="BuildSS">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@6cf10426</data>
-            <data key="name">BuildSS</data>
+        <node id="BuildSS_0">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4288f422</data>
+            <data key="name">BuildSS_0</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="BuildSS_1">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4288f422</data>
+            <data key="name">BuildSS_1</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="BuildSS_2">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4288f422</data>
+            <data key="name">BuildSS_2</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="BuildSS_3">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4288f422</data>
+            <data key="name">BuildSS_3</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="BuildSS_4">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4288f422</data>
+            <data key="name">BuildSS_4</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments">
+                <argument name="mO" value="MAX_O"/>
+                <argument name="ysize" value="ysize"/>
+                <argument name="mS" value="MAX_S"/>
+                <argument name="xsize" value="xsize"/>
+            </data>
+        </node>
+        <node id="BuildSS_5">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4288f422</data>
+            <data key="name">BuildSS_5</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
             <data key="arguments">
@@ -74,29 +134,22 @@
             <data key="name">octavesW</data>
             <data key="kind">Broadcast</data>
             <data key="nbRepeat">1</data>
-            <data key="arguments">
-                <argument name="mO" value="MAX_O"/>
-            </data>
+            <data key="arguments"/>
         </node>
         <node id="octavesH">
             <data key="name">octavesH</data>
             <data key="kind">Broadcast</data>
             <data key="nbRepeat">1</data>
-            <data key="arguments">
-                <argument name="mO" value="MAX_O"/>
-            </data>
+            <data key="arguments"/>
         </node>
         <node id="sigmas">
             <data key="name">sigmas</data>
             <data key="kind">Broadcast</data>
             <data key="nbRepeat">1</data>
-            <data key="arguments">
-                <argument name="mO" value="MAX_O"/>
-                <argument name="mS" value="MAX_S"/>
-            </data>
+            <data key="arguments"/>
         </node>
         <node id="DoG">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@434792aa</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@2d54064e</data>
             <data key="name">DoG</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -108,7 +161,7 @@
             </data>
         </node>
         <node id="Extreme">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@fedf968</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@676a0221</data>
             <data key="name">Extreme</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -120,7 +173,7 @@
             </data>
         </node>
         <node id="Orientation">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@50912303</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@60b1f991</data>
             <data key="name">Orientation</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -135,15 +188,10 @@
             <data key="name">scaleSpace</data>
             <data key="kind">Broadcast</data>
             <data key="nbRepeat">1</data>
-            <data key="arguments">
-                <argument name="mO" value="MAX_O"/>
-                <argument name="ysize" value="ysize"/>
-                <argument name="mS" value="MAX_S"/>
-                <argument name="xsize" value="xsize"/>
-            </data>
+            <data key="arguments"/>
         </node>
         <node id="Render">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@6891c347</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@4477d02f</data>
             <data key="name">Render</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -158,13 +206,10 @@
             <data key="name">Img</data>
             <data key="kind">Broadcast</data>
             <data key="nbRepeat">1</data>
-            <data key="arguments">
-                <argument name="ysize" value="ysize"/>
-                <argument name="xsize" value="xsize"/>
-            </data>
+            <data key="arguments"/>
         </node>
         <node id="WritePGM">
-            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@39ab9ff3</data>
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1604e0c7</data>
             <data key="name">WritePGM</data>
             <data key="kind">vertex</data>
             <data key="nbRepeat">1</data>
@@ -173,182 +218,267 @@
                 <argument name="h" value="ysize"/>
             </data>
         </node>
+        <node id="ParalSS">
+            <data key="graph_desc">org.ietr.preesm.codegen.idl.ActorPrototypes@1a41341c</data>
+            <data key="name">ParalSS</data>
+            <data key="kind">vertex</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="implode_scaleSpace_in">
+            <data key="name">implode_scaleSpace_in</data>
+            <data key="kind">join</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="explode_BuildOB_octaves">
+            <data key="name">explode_BuildOB_octaves</data>
+            <data key="kind">fork</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
+        <node id="explode_ParalSS_Paral">
+            <data key="name">explode_ParalSS_Paral</data>
+            <data key="kind">fork</data>
+            <data key="nbRepeat">1</data>
+            <data key="arguments"/>
+        </node>
         <edge source="Init" sourceport="octavesW_g" target="octavesW" targetport="in">
-            <data key="edge_cons">6.0</data>
-            <data key="edge_delay">6.0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_cons">6</data>
+            <data key="edge_delay">6</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Init" sourceport="octavesH_g" target="octavesH" targetport="in">
-            <data key="edge_cons">6.0</data>
-            <data key="edge_delay">6.0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_cons">6</data>
+            <data key="edge_delay">6</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Init" sourceport="sigmas" target="sigmas" targetport="in">
-            <data key="edge_cons">36.0</data>
-            <data key="edge_delay">36.0</data>
-            <data key="edge_prod">36.0</data>
+            <data key="edge_cons">36</data>
+            <data key="edge_delay">36</data>
+            <data key="edge_prod">36</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesW" sourceport="out1" target="BuildOB" targetport="octavesW">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesH" sourceport="out1" target="BuildOB" targetport="octavesH">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesW" sourceport="out3" target="DoG" targetport="octavesW">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesH" sourceport="out3" target="DoG" targetport="octavesH">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesW" sourceport="out4" target="Extreme" targetport="octavesW">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesH" sourceport="out4" target="Extreme" targetport="octavesH">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesW" sourceport="out5" target="Orientation" targetport="octavesW">
-            <data key="edge_cons">6.0</data>
+            <data key="edge_cons">6</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="sigmas" sourceport="out2" target="Orientation" targetport="sigmas">
-            <data key="edge_cons">36.0</data>
+            <data key="edge_cons">36</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">36.0</data>
+            <data key="edge_prod">36</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
-        <edge source="BuildSS" sourceport="scaleSpace"
+        <edge source="implode_scaleSpace_in" sourceport="scaleSpace"
             target="scaleSpace" targetport="in">
-            <data key="edge_cons">3649536.0</data>
-            <data key="edge_delay">3649536.0</data>
-            <data key="edge_prod">3649536.0</data>
+            <data key="edge_cons">3649536</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">3649536</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS_0" sourceport="scaleSpace"
+            target="implode_scaleSpace_in" targetport="in_0">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">608256</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
-            <data key="target_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS_1" sourceport="scaleSpace"
+            target="implode_scaleSpace_in" targetport="in_608256">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">608256</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS_2" sourceport="scaleSpace"
+            target="implode_scaleSpace_in" targetport="in_1216512">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">608256</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS_3" sourceport="scaleSpace"
+            target="implode_scaleSpace_in" targetport="in_1824768">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">608256</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS_4" sourceport="scaleSpace"
+            target="implode_scaleSpace_in" targetport="in_2433024">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">608256</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="BuildSS_5" sourceport="scaleSpace"
+            target="implode_scaleSpace_in" targetport="in_3041280">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">608256</data>
+            <data key="data_type">float</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
             <data key="Weight"/>
         </edge>
         <edge source="scaleSpace" sourceport="out1" target="DoG" targetport="scaleSpace">
-            <data key="edge_cons">3649536.0</data>
+            <data key="edge_cons">3649536</data>
             <data key="edge_delay">0</data>
-            <data key="edge_prod">3649536.0</data>
+            <data key="edge_prod">3649536</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="scaleSpace" sourceport="out2" target="Orientation" targetport="scaleSpace">
-            <data key="edge_cons">3649536.0</data>
-            <data key="edge_delay">7299072.0</data>
-            <data key="edge_prod">3649536.0</data>
+            <data key="edge_cons">3649536</data>
+            <data key="edge_delay">7299072</data>
+            <data key="edge_prod">3649536</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="ReadYUV" sourceport="y" target="Img" targetport="in">
-            <data key="edge_cons">101376.0</data>
-            <data key="edge_delay">101376.0</data>
-            <data key="edge_prod">101376.0</data>
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Img" sourceport="out1" target="BuildOB" targetport="img">
-            <data key="edge_cons">101376.0</data>
-            <data key="edge_delay">101376.0</data>
-            <data key="edge_prod">101376.0</data>
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Img" sourceport="out2" target="Render" targetport="img">
-            <data key="edge_cons">101376.0</data>
-            <data key="edge_delay">608256.0</data>
-            <data key="edge_prod">101376.0</data>
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">608256</data>
+            <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesW" sourceport="out6" target="Render" targetport="octavesW">
-            <data key="edge_cons">6.0</data>
-            <data key="edge_delay">6.0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_cons">6</data>
+            <data key="edge_delay">6</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="octavesH" sourceport="out5" target="Render" targetport="octavesH">
-            <data key="edge_cons">6.0</data>
-            <data key="edge_delay">6.0</data>
-            <data key="edge_prod">6.0</data>
+            <data key="edge_cons">6</data>
+            <data key="edge_delay">6</data>
+            <data key="edge_prod">6</data>
             <data key="data_type">int</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="sigmas" sourceport="out3" target="Render" targetport="sigmas">
-            <data key="edge_cons">36.0</data>
-            <data key="edge_delay">36.0</data>
-            <data key="edge_prod">36.0</data>
+            <data key="edge_cons">36</data>
+            <data key="edge_delay">36</data>
+            <data key="edge_prod">36</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
@@ -356,54 +486,115 @@
         </edge>
         <edge source="Orientation" sourceport="keyPointListCP"
             target="Render" targetport="keyPointList">
-            <data key="edge_cons">1.0</data>
-            <data key="edge_delay">1.0</data>
-            <data key="edge_prod">1.0</data>
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">1</data>
+            <data key="edge_prod">1</data>
             <data key="data_type">pointList</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Render" sourceport="r" target="WritePGM" targetport="r">
-            <data key="edge_cons">101376.0</data>
-            <data key="edge_delay">101376.0</data>
-            <data key="edge_prod">101376.0</data>
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Render" sourceport="g" target="WritePGM" targetport="g">
-            <data key="edge_cons">101376.0</data>
-            <data key="edge_delay">101376.0</data>
-            <data key="edge_prod">101376.0</data>
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="Render" sourceport="b" target="WritePGM" targetport="b">
-            <data key="edge_cons">101376.0</data>
-            <data key="edge_delay">101376.0</data>
-            <data key="edge_prod">101376.0</data>
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
-        <edge source="BuildOB" sourceport="octaves" target="BuildSS" targetport="octaves">
-            <data key="edge_cons">608256.0</data>
-            <data key="edge_delay">608256.0</data>
-            <data key="edge_prod">608256.0</data>
+        <edge source="BuildOB" sourceport="octaves"
+            target="explode_BuildOB_octaves" targetport="octaves">
+            <data key="edge_cons">608256</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">608256</data>
             <data key="data_type">uchar</data>
             <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_BuildOB_octaves" sourceport="octaves_0"
+            target="BuildSS_0" targetport="octaves">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_BuildOB_octaves"
+            sourceport="octaves_101376" target="BuildSS_1" targetport="octaves">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_BuildOB_octaves"
+            sourceport="octaves_202752" target="BuildSS_2" targetport="octaves">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_BuildOB_octaves"
+            sourceport="octaves_304128" target="BuildSS_3" targetport="octaves">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_BuildOB_octaves"
+            sourceport="octaves_405504" target="BuildSS_4" targetport="octaves">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_BuildOB_octaves"
+            sourceport="octaves_506880" target="BuildSS_5" targetport="octaves">
+            <data key="edge_cons">101376</data>
+            <data key="edge_delay">101376</data>
+            <data key="edge_prod">101376</data>
+            <data key="data_type">uchar</data>
+            <data key="source_port_modifier">write_only</data>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>
         <edge source="DoG" sourceport="dog" target="Extreme" targetport="dog">
-            <data key="edge_cons">3041280.0</data>
-            <data key="edge_delay">3041280.0</data>
-            <data key="edge_prod">3041280.0</data>
+            <data key="edge_cons">3041280</data>
+            <data key="edge_delay">3041280</data>
+            <data key="edge_prod">3041280</data>
             <data key="data_type">float</data>
             <data key="source_port_modifier"/>
             <data key="target_port_modifier"/>
@@ -411,11 +602,81 @@
         </edge>
         <edge source="Extreme" sourceport="keyPointList"
             target="Orientation" targetport="keyPointList">
-            <data key="edge_cons">1.0</data>
-            <data key="edge_delay">1.0</data>
-            <data key="edge_prod">1.0</data>
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">1</data>
+            <data key="edge_prod">1</data>
             <data key="data_type">pointList</data>
             <data key="source_port_modifier"/>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="ParalSS" sourceport="Paral"
+            target="explode_ParalSS_Paral" targetport="Paral">
+            <data key="edge_cons">6</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">6</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier"/>
+            <data key="target_port_modifier">read_only</data>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_ParalSS_Paral" sourceport="Paral_0"
+            target="BuildSS_0" targetport="Paral">
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_ParalSS_Paral" sourceport="Paral_1"
+            target="BuildSS_1" targetport="Paral">
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_ParalSS_Paral" sourceport="Paral_2"
+            target="BuildSS_2" targetport="Paral">
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_ParalSS_Paral" sourceport="Paral_3"
+            target="BuildSS_3" targetport="Paral">
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_ParalSS_Paral" sourceport="Paral_4"
+            target="BuildSS_4" targetport="Paral">
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier">write_only</data>
+            <data key="target_port_modifier"/>
+            <data key="Weight"/>
+        </edge>
+        <edge source="explode_ParalSS_Paral" sourceport="Paral_5"
+            target="BuildSS_5" targetport="Paral">
+            <data key="edge_cons">1</data>
+            <data key="edge_delay">0</data>
+            <data key="edge_prod">1</data>
+            <data key="data_type">int</data>
+            <data key="source_port_modifier">write_only</data>
             <data key="target_port_modifier"/>
             <data key="Weight"/>
         </edge>

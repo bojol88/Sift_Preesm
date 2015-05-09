@@ -45,6 +45,6 @@ void split(int nbSlice, int xsize, int ysize, unsigned char *input, unsigned cha
 * @param output
 *        the output image of size xSize*Size
 */
-void merge(int nbSlice, int xsize, int ysize, unsigned char *input, unsigned char *output);
+void merge(int nbSlice, int xsize, int ysize, float *input, float *output);
 
 #endif

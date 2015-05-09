@@ -23,7 +23,8 @@ void g2d(float* target,
 
 void buildSS(unsigned char octaves[MAX_O*MAX_OCTAVE_SIZE],
 			 float scaleSpace[MAX_O*MAX_S*MAX_OCTAVE_SIZE],
-			 int xsize, int ysize){
+			 int xsize, int ysize,
+			 int * Paral){
 
     // common variables
     int i, j;
@@ -54,16 +55,20 @@ void buildSS(unsigned char octaves[MAX_O*MAX_OCTAVE_SIZE],
 		}
 	}
 
-    for(i = 0; i < NUMBER_OF_OCTAVES; i++){
+
+	// BuildSS Function
+	// For PREESM
+	i = Paral[0];
+    //for(i = 0; i < NUMBER_OF_OCTAVES; i++){
         for(j = 0; j < NUMBER_OF_SCALES; j++){
             // 2D Gaussian
-            g2d(&scaleSpace[(i*MAX_S+j)*MAX_OCTAVE_SIZE], 
-                &octaves[i*MAX_OCTAVE_SIZE],
+            g2d(&scaleSpace[(/*i*MAX_S+*/j)*MAX_OCTAVE_SIZE],
+                &octaves[/*i*MAX_OCTAVE_SIZE*/0],
                 octavesW[i],
                 octavesH[i],
                 sigmas[i*MAX_S+j]);
         }
-    }
+    //}
   
 }
 
@@ -227,4 +232,14 @@ void g2d(float* target,
     free(srcPadded);
     free(intermediate);
 
+}
+
+
+void ParalSS(int * Paral)
+{
+	int i;
+	for (i=0;i<6;i++)
+	{
+		Paral[i]=i;
+	}
 }

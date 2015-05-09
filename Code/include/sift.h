@@ -80,7 +80,8 @@ void buildOB(unsigned char* img,
 
 void buildSS(unsigned char* octaves,
 			 float* scaleSpace,
-			 int xsize, int ysize);
+			 int xsize, int ysize,
+			 int * Paral);
 
 void DoG(float* dog,
 		 float* scaleSpace,
@@ -109,6 +110,8 @@ void  render(unsigned char* img,
 void Sift(unsigned char* input, int xsize, int ysize, unsigned char* r, unsigned char* g, unsigned char* b);
 
 void InitSift(int xsize, int ysize, int * octavesW_g, int * octavesH_g, float * sigmas);
+
+void ParalSS(int * Paral);
 
 #endif//_SIFT_H_
 
